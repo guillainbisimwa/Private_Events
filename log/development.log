@@ -779,3 +779,228 @@ puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
   [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2020-11-17 15:44:18 -0400
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 566.3ms | Allocations: 301)
+Completed 200 OK in 656ms (Views: 597.5ms | ActiveRecord: 0.0ms | Allocations: 1673)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-11-17 15:44:27 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 245.7ms | Allocations: 1257)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in C:/Users/Owner/Desktop/Microverse/Ruby On Rails/Private_Events/public/packs
+[Webpacker] Hash: 15d1bb7b54cf6326b9ba
+Version: webpack 4.44.2
+Time: 19648ms
+Built at: 11/17/2020 3:45:09 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9afcbb5693aa87623e69.js    124 KiB  application  [emitted] [immutable]  application
+js/application-9afcbb5693aa87623e69.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-9afcbb5693aa87623e69.js js/application-9afcbb5693aa87623e69.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 43520ms (Views: 43489.1ms | ActiveRecord: 4.1ms | Allocations: 28877)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-11-17 15:45:39 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"aC/+h4gTOcAZd0q0CH8xIhmajPK0UiI6ckG54J0kqKp8hsFlnPCe6U2e85BeR4V6TcnmVmw/OHnGxS2/XLnfMA==", "user"=>{"first_name"=>"Arya", "last_name"=>"Stark", "email"=>"aryastark@got.com", "password"=>"[FILTERED]"}, "commit"=>"Create new user"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (102.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "aryastark@got.com"], ["first_name", "Arya"], ["last_name", "Stark"], ["password", "password"], ["created_at", "2020-11-17 19:45:39.367298"], ["updated_at", "2020-11-17 19:45:39.367298"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (309.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Redirected to http://127.0.0.1:3000/users
+Completed 302 Found in 1285ms (ActiveRecord: 412.3ms | Allocations: 4661)
+
+
+Started GET "/users" for 127.0.0.1 at 2020-11-17 15:45:40 -0400
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 31.1ms | Allocations: 1744)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.0ms | Allocations: 2297)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: <h1><%= @user.first_name %> </h1>
+  
+app/views/users/show.html.erb:1
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/users" for 127.0.0.1 at 2020-11-17 15:55:34 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 8)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 115ms (Views: 77.9ms | ActiveRecord: 0.5ms | Allocations: 9867)
+
+
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (46.0ms)[0m  [1m[33mUPDATE "users" SET "email" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["email", "johndoe@example.com"], ["updated_at", "2020-11-17 19:57:19.353631"], ["id", 1]]
+  [1m[35m (155.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/users" for 127.0.0.1 at 2020-11-17 15:57:36 -0400
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1374)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.4ms | Allocations: 2482)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: <h1><%= @user.first_name %> </h1>
+  
+app/views/users/show.html.erb:1
+Started GET "/users" for 127.0.0.1 at 2020-11-17 15:57:45 -0400
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1371)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.3ms | Allocations: 2474)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: <h1><%= @user.first_name %> </h1>
+  
+app/views/users/show.html.erb:1
+Started GET "/users/new" for 127.0.0.1 at 2020-11-17 15:59:39 -0400
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1115)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 166ms (Views: 125.2ms | ActiveRecord: 3.1ms | Allocations: 15200)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-11-17 15:59:54 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"YbZNxy+jIGGh3ZJK9pmbmCL5g4oCgKM0WkGyg+mf7kZ1H3IlO0CHSPU0K26goS/AdqrpLtrtuXfuxSbcKAKZ3A==", "user"=>{"first_name"=>"Tom", "last_name"=>"Jerry", "email"=>"tomjerry@example.com", "password"=>"[FILTERED]"}, "commit"=>"Create new user"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (11.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "tomjerry@example.com"], ["first_name", "Tom"], ["last_name", "Jerry"], ["password", "password"], ["created_at", "2020-11-17 19:59:54.931759"], ["updated_at", "2020-11-17 19:59:54.931759"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (108.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Redirected to http://127.0.0.1:3000/users
+Completed 302 Found in 214ms (ActiveRecord: 119.8ms | Allocations: 4075)
+
+
+Started GET "/users" for 127.0.0.1 at 2020-11-17 15:59:55 -0400
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1747)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.4ms | Allocations: 3296)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: <h1><%= @user.first_name %> </h1>
+  
+app/views/users/show.html.erb:1
+Started GET "/users" for 127.0.0.1 at 2020-11-17 16:01:11 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1328)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 1908)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: <h1><%= @user.first_name %> </h1>
+  
+app/views/users/show.html.erb:1
+Started GET "/users" for 127.0.0.1 at 2020-11-17 16:01:47 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1326)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 1.4ms | Allocations: 3465)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: <h1><%= @user.first_name %> </h1>
+  
+app/views/users/show.html.erb:1
+Started GET "/users" for 127.0.0.1 at 2020-11-17 16:05:55 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 1309)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/users_controller.rb:17:in `show'
+Started GET "/users" for 127.0.0.1 at 2020-11-17 16:06:53 -0400
+Processing by UsersController#show as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1077)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/users_controller.rb:17:in `show'
+Started GET "/users" for 127.0.0.1 at 2020-11-17 16:08:47 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1412)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.0ms | Allocations: 2561)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: <h1><%= @user.first_name %> </h1>
+  
+app/views/users/show.html.erb:1
+Started GET "/users" for 127.0.0.1 at 2020-11-17 16:11:46 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 1309)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/users_controller.rb:19:in `show'
+Started GET "/users" for 127.0.0.1 at 2020-11-17 16:12:32 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+Completed 500 Internal Server Error in 90510ms (ActiveRecord: 0.0ms | Allocations: 150506)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `show'
+app/controllers/users_controller.rb:20:in `show'
