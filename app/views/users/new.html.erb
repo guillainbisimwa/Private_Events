@@ -1,0 +1,19 @@
+<%= form_for :user, :url => users_path, method: :post do |form| %>
+  
+  <ul>
+    <%= form.text_field :first_name, placeholder: "Your first name here"%>
+  </ul>
+  <ul>
+    <%= form.text_field :last_name, placeholder: "Your last name here"%>
+  </ul>
+  <ul>
+    <%= form.email_field :email, placeholder: "Your email here" %>
+  </ul>
+  <ul>
+    <%= form.password_field :password, placeholder: "Enter a secure password (of at least 8 characters)" %>
+  </ul>
+  <ul>
+    <%= form.submit "Create new user" %>
+  </ul>
+  <br>
+<% end %>
