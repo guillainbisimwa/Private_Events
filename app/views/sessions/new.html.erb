@@ -1,15 +1,17 @@
-<%= form_with model: @user, method: :post do |form| %>
+<h1>Welcome to the Login Page of Private Events app</h1>
+
+<%= form_with scope: :session, url: login_path, method: :post do |form| %>
   
   <ul>
     <%= form.label :first_name %>
     <%= form.text_field :first_name, placeholder: "Your first name here"%>
   </ul>
   <ul>
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name, placeholder: "Your last name here"%>
+    <%= form.label :id %>
+    <%= form.number_field :number_field, placeholder: "Your id here"%>
   </ul>
   <ul>
-    <%= form.label :email %>
+    <%= form.label :email %>  
     <%= form.email_field :email, placeholder: "Your email here" %>
   </ul>
   <ul>
@@ -17,7 +19,7 @@
     <%= form.password_field :password, placeholder: "Enter a secure password (of at least 8 characters)" %>
   </ul>
   <ul>
-    <%= form.submit "Create new user" %>
+    <%= form.submit "Login user" %>
   </ul>
   <br>
 <% end %>
