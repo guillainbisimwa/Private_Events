@@ -5227,3 +5227,193 @@ Completed 200 OK in 75ms (Views: 70.3ms | ActiveRecord: 0.9ms | Allocations: 663
   [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddEventUserRelations (20201119220645)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aevent_users" ("id" integer NOT NULL PRIMARY KEY, "creator_event" integer DEFAULT NULL, "event_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aevent_users" ("id","creator_event","event_id","user_id","created_at","updated_at")
+                     SELECT "id","creator_event","event_id","user_id","created_at","updated_at" FROM "event_users"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE "event_users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "event_users" ("id" integer NOT NULL PRIMARY KEY, "creator_event" integer DEFAULT NULL, "event_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_55572bff4d"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+, CONSTRAINT "fk_rails_a7818ce0b6"
+FOREIGN KEY ("creator_event")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "event_users" ("id","creator_event","event_id","user_id","created_at","updated_at")
+                     SELECT "id","creator_event","event_id","user_id","created_at","updated_at" FROM "aevent_users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aevent_users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aevent_users" ("id" integer NOT NULL PRIMARY KEY, "creator_event" integer DEFAULT NULL, "event_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aevent_users" ("id","creator_event","event_id","user_id","created_at","updated_at")
+                     SELECT "id","creator_event","event_id","user_id","created_at","updated_at" FROM "event_users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "event_users"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "event_users" ("id" integer NOT NULL PRIMARY KEY, "creator_event" integer DEFAULT NULL, "event_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_a7818ce0b6"
+FOREIGN KEY ("creator_event")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "event_users" ("id","creator_event","event_id","user_id","created_at","updated_at")
+                     SELECT "id","creator_event","event_id","user_id","created_at","updated_at" FROM "aevent_users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aevent_users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20201119220645"]]
+  [1m[35m (174.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddEventToUserRelation (20201119214604)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddEventToUserRelation (20201119214604)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aevents" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "datetime" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "creator" integer DEFAULT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "aevents" ("id","title","datetime","location","created_at","updated_at","creator")
+                     SELECT "id","title","datetime","location","created_at","updated_at","creator" FROM "events"[0m
+  [1m[35m (57.7ms)[0m  [1m[35mDROP TABLE "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "datetime" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "creator" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "events" ("id","title","datetime","location","created_at","updated_at","creator")
+                     SELECT "id","title","datetime","location","created_at","updated_at","creator" FROM "aevents"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aevents"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.9ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20201119214604"]]
+  [1m[35m (642.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEventUsers (20201119214316)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (47.7ms)[0m  [1m[35mDROP TABLE "event_users"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20201119214316"]]
+  [1m[35m (442.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEventUsers (20201119214316)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "event_users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "event_id" integer, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201119214316"]]
+  [1m[35m (302.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddEventToUserRelation (20201119214604)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aevents" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "datetime" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "creator" integer DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aevents" ("id","title","datetime","location","created_at","updated_at","creator")
+                     SELECT "id","title","datetime","location","created_at","updated_at","creator" FROM "events"[0m
+  [1m[35m (5.3ms)[0m  [1m[35mDROP TABLE "events"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "datetime" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "creator" integer DEFAULT NULL, CONSTRAINT "fk_rails_15c34a9137"
+FOREIGN KEY ("creator_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (62.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddEventToUserRelation (20201119214604)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aevents" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "datetime" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "creator" integer DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aevents" ("id","title","datetime","location","created_at","updated_at","creator")
+                     SELECT "id","title","datetime","location","created_at","updated_at","creator" FROM "events"[0m
+  [1m[35m (4.4ms)[0m  [1m[35mDROP TABLE "events"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "datetime" varchar DEFAULT NULL, "location" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "creator" integer DEFAULT NULL, CONSTRAINT "fk_rails_67f803958a"
+FOREIGN KEY ("creator")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "events" ("id","title","datetime","location","created_at","updated_at","creator")
+                     SELECT "id","title","datetime","location","created_at","updated_at","creator" FROM "aevents"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aevents"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201119214604"]]
+  [1m[35m (153.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddEventUserRelations (20201119220645)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aevent_users" ("id" integer NOT NULL PRIMARY KEY, "event_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aevent_users" ("id","event_id","user_id","created_at","updated_at")
+                     SELECT "id","event_id","user_id","created_at","updated_at" FROM "event_users"[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE "event_users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "event_users" ("id" integer NOT NULL PRIMARY KEY, "event_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_55572bff4d"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "event_users" ("id","event_id","user_id","created_at","updated_at")
+                     SELECT "id","event_id","user_id","created_at","updated_at" FROM "aevent_users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "aevent_users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aevent_users" ("id" integer NOT NULL PRIMARY KEY, "event_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aevent_users" ("id","event_id","user_id","created_at","updated_at")
+                     SELECT "id","event_id","user_id","created_at","updated_at" FROM "event_users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "event_users"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "event_users" ("id" integer NOT NULL PRIMARY KEY, "event_id" integer DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_55572bff4d"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+, CONSTRAINT "fk_rails_2fc76a96e7"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "event_users" ("id","event_id","user_id","created_at","updated_at")
+                     SELECT "id","event_id","user_id","created_at","updated_at" FROM "aevent_users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aevent_users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201119220645"]]
+  [1m[35m (155.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ? LIMIT ?[0m  [["creator", 42], ["LIMIT", 11]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "event_users" ON "users"."id" = "event_users"."user_id" WHERE "event_users"."event_id" = ? LIMIT ?[0m  [["event_id", 1], ["LIMIT", 11]]

@@ -13,7 +13,6 @@
 ActiveRecord::Schema.define(version: 2020_11_19_220645) do
 
   create_table "event_users", force: :cascade do |t|
-    t.integer "creator_event"
     t.integer "event_id"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -40,6 +39,5 @@ ActiveRecord::Schema.define(version: 2020_11_19_220645) do
 
   add_foreign_key "event_users", "events"
   add_foreign_key "event_users", "users"
-  add_foreign_key "event_users", "users", column: "creator_event"
   add_foreign_key "events", "users", column: "creator"
 end
