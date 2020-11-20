@@ -1,20 +1,8 @@
 <%= form_with model: @event, method: :post do |form| %>
   
   <ul>
-    <%= form.label :title %>
-    <%= form.text_field :title, placeholder: "Event title here"%>
-  </ul>
-  <ul>
-    <%= form.label :description %>
-    <%= form.text_area :description, rows: 10,  placeholder: "Event description here"%>
-  </ul>
-  <ul>
-    <%= form.label :location %>
-    <%= form.text_field :location, placeholder: "Event location here"%>
-  </ul>
-  <ul>
-    <%= form.label :datetime %>
-    <%= form.date_select :datetime, placeholder: "Your date here" %>
+    <h2>Description of your new Event! </h2>
+    <%= form.text_area :description, rows: 10, cols: 100, placeholder: "Event description here"%>
   </ul>
   
   <ul>

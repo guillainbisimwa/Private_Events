@@ -1,8 +1,14 @@
 class UsersController < ApplicationController
-    
-    def new
-      @user = User.new
-    end
+	before_action :set_user, only: [:show]
+
+	before_action :require_same_user, only: [:show]
+	
+	def new
+		@user = User.new
+		if logged_in?
+			redirect_to users_path
+		end
+	end
 
 	def create
 		@user = User.new(user_params)
@@ -17,13 +23,27 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = User.find(params[:format].to_i)
 	end
 
-    private
+	private
 
-    def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password)
+	def set_user
+		if !logged_in?
+			redirect_to login_path
+		else
+			@user = User.find(session[:user_id])
+		end
 	end
+
+	def user_params
+		params.require(:user).permit(:first_name, :last_name, :email, :password)
+	end
+
+	def require_same_user
+    if current_user != @user
+      flash[:alert] = "You can only see your own events"
+      redirect_to users_path
+    end
+  end
 
 end

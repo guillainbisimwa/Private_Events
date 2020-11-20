@@ -1,1 +1,10 @@
 <h1>Show Event</h1>
+
+<p> The Event's title is: 
+<% if !@event.title.nil? %>
+  <%= @event.title %>
+<% else %>
+  <%= @event.description %>
+<% end %>
+
+<p> The creator of this Event is: <%= @user.first_name %>
