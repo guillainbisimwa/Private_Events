@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resource :users, only: [:new, :create, :show]
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
+
+  resources :events
 end

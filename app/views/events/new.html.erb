@@ -1,0 +1,20 @@
+<%= form_with model: @event, method: :post do |form| %>
+  
+  <ul>
+    <%= form.label :title %>
+    <%= form.text_field :title, placeholder: "Event title here"%>
+  </ul>
+  <ul>
+    <%= form.label :location %>
+    <%= form.text_field :location, placeholder: "Event location here"%>
+  </ul>
+  <ul>
+    <%= form.label :datetime %>
+    <%= form.date_select :datetime, placeholder: "Your date here" %>
+  </ul>
+  
+  <ul>
+    <%= form.submit "Create an event" %>
+  </ul>
+  <br>
+<% end %>
