@@ -19,21 +19,7 @@ RSpec.describe UsersController do
         expect(:get => "users/new").to route_to("controller"=>"users", "action"=>"new")
       end
     end
-
-    describe "GET show" do
-      before(:example) do
-        get :show
-      end
-
-      it "renders the show template" do
-        expect(response).to render_template("show")
-      end
-
-      it "has a 200 status code" do
-        expect(response.status).to eq(200)
-      end
-    end
-
+    
     describe "POST new" do
       subject { post :create, :params => { :user => { :first_name => "Any Name" } } }
 
