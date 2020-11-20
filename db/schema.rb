@@ -10,15 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_18_214233) do
+ActiveRecord::Schema.define(version: 2020_11_19_220645) do
 
-  create_table "creators", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "creator_id"
+  create_table "event_users", force: :cascade do |t|
+    t.integer "creator_event"
+    t.integer "event_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["creator_id"], name: "index_creators_on_creator_id"
-    t.index ["user_id"], name: "index_creators_on_user_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -27,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_11_18_214233) do
     t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "creator"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,15 +38,8 @@ ActiveRecord::Schema.define(version: 2020_11_18_214233) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users_events", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "event_id", null: false
-    t.index ["event_id"], name: "index_users_events_on_event_id"
-    t.index ["user_id"], name: "index_users_events_on_user_id"
-  end
-
-  add_foreign_key "creators", "users"
-  add_foreign_key "creators", "users", column: "creator_id"
-  add_foreign_key "users_events", "events"
-  add_foreign_key "users_events", "users"
+  add_foreign_key "event_users", "events"
+  add_foreign_key "event_users", "users"
+  add_foreign_key "event_users", "users", column: "creator_event"
+  add_foreign_key "events", "users", column: "creator"
 end
