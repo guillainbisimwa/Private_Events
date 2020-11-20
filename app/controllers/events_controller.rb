@@ -14,7 +14,7 @@ class EventsController < ApplicationController
 			flash[:notice] = "#{@event.title} event has been created!"
 			redirect_to events_path
 		else
-			flash[:alert] = event.errors.full_messages
+			flash[:alert] = @event.errors.full_messages
 			redirect_to "new"
 		end
     end
@@ -26,6 +26,6 @@ class EventsController < ApplicationController
     private
 
     def event_params
-      params.require(:event).permit(:title, :location, :datetime)
+      params.require(:event).permit(:title, :location, :datetime, :description)
 	end  
 end

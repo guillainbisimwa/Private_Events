@@ -5908,3 +5908,94 @@ Processing by EventsController#index as HTML
 Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.2ms | Allocations: 4737)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDescriptionColumnToEvent (20201120212239)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "events" ADD "description" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201120212239"]]
+  [1m[35m (28.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/events" for ::1 at 2020-11-20 23:26:41 +0200
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:3
+  Rendered events/index.html.erb within layouts/application (Duration: 20.5ms | Allocations: 5703)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.7ms | Allocations: 186)
+Completed 200 OK in 80ms (Views: 47.0ms | ActiveRecord: 1.6ms | Allocations: 16594)
+
+
+Started GET "/events/new" for ::1 at 2020-11-20 23:26:45 +0200
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 21.3ms | Allocations: 4135)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.0ms | Allocations: 8370)
+
+
+Started GET "/events/new" for ::1 at 2020-11-20 23:26:59 +0200
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1932)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.0ms | Allocations: 6028)
+
+
+Started POST "/events" for ::1 at 2020-11-20 23:27:42 +0200
+Processing by EventsController#create as JS
+  Parameters: {"authenticity_token"=>"R2iUBGIVjKkJROsD23DzKSq/32XPwAfluAjXV5ddkgrRLEEMSNSww8tX6VPwogul9WfN7vlLFl03ChGGHmGsog==", "event"=>{"title"=>"Hello from web", "description"=>"Trying to post from web", "location"=>"Anywhere", "datetime(1i)"=>"2020", "datetime(2i)"=>"11", "datetime(3i)"=>"19"}, "commit"=>"Create an event"}
+Completed 500 Internal Server Error in 195ms (ActiveRecord: 0.0ms | Allocations: 86435)
+
+
+  
+NameError (undefined local variable or method `event' for #<EventsController:0x000056485f7bbf80>
+Did you mean?  @event):
+  
+app/controllers/events_controller.rb:17:in `create'
+Started POST "/events" for ::1 at 2020-11-20 23:28:33 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#create as JS
+  Parameters: {"authenticity_token"=>"R2iUBGIVjKkJROsD23DzKSq/32XPwAfluAjXV5ddkgrRLEEMSNSww8tX6VPwogul9WfN7vlLFl03ChGGHmGsog==", "event"=>{"title"=>"Hello from web", "description"=>"Trying to post from web", "location"=>"Anywhere", "datetime(1i)"=>"2020", "datetime(2i)"=>"11", "datetime(3i)"=>"19"}, "commit"=>"Create an event"}
+Redirected to http://localhost:3000new
+Completed 200 OK in 26ms (ActiveRecord: 2.7ms | Allocations: 7685)
+
+
+Started GET "/events/new" for ::1 at 2020-11-20 23:33:33 +0200
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1936)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 25)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.0ms | Allocations: 6257)
+
+
+Started GET "/events" for ::1 at 2020-11-20 23:33:46 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:3
+  Rendered events/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 698)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.4ms | Allocations: 18)
+Completed 200 OK in 27ms (Views: 25.3ms | ActiveRecord: 0.4ms | Allocations: 4816)
+
+
+Started GET "/events" for ::1 at 2020-11-20 23:33:48 +0200
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:3
+  Rendered events/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 664)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+Completed 200 OK in 22ms (Views: 19.2ms | ActiveRecord: 0.3ms | Allocations: 4753)
+
+
