@@ -5035,3 +5035,190 @@ FOREIGN KEY ("creator_id")
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mActiveRecord::InternalMetadata Create (4.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "9326b5e2f13259cf6a6a3fdf6fc4feb79fe0a65d"], ["created_at", "2020-11-20 17:11:47.391674"], ["updated_at", "2020-11-20 17:11:47.391674"]]
   [1m[35m (211.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (6.1ms)[0m  [1m[33mUPDATE "users" SET "last_name" = ?, "password" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_name", "Wyck"], ["password", "password"], ["updated_at", "2020-11-20 17:53:06.983258"], ["id", 42]]
+  [1m[35m (140.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users.36" for 127.0.0.1 at 2020-11-20 13:53:22 -0400
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 36]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 31.0ms | Allocations: 5631)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 17.9ms | Allocations: 193)
+Completed 200 OK in 2698ms (Views: 2573.3ms | ActiveRecord: 10.0ms | Allocations: 43525)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-11-20 13:53:33 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 426.1ms | Allocations: 2612)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 18)
+Completed 200 OK in 503ms (Views: 498.2ms | ActiveRecord: 0.0ms | Allocations: 8593)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-20 13:53:37 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"pNtP7JbXBVJnKQ7EraQv1V+3EKxXJ5sUOZ7q1NxS0zQYTRO0NYDrWr32iz76kTaBXEvYkhWmooUpibldG8v+kw==", "session"=>{"first_name"=>"Jose", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "jose"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/users.36
+Completed 200 OK in 10ms (ActiveRecord: 0.9ms | Allocations: 1777)
+
+
+Started GET "/users.36" for 127.0.0.1 at 2020-11-20 13:53:38 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 36]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 4.3ms | Allocations: 768)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 22)
+Completed 200 OK in 100ms (Views: 91.7ms | ActiveRecord: 1.1ms | Allocations: 6618)
+
+
+Started GET "/users.36" for 127.0.0.1 at 2020-11-20 13:53:53 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 36]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 22.5ms | Allocations: 935)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.7ms | Allocations: 182)
+Completed 200 OK in 119ms (Views: 112.1ms | ActiveRecord: 0.7ms | Allocations: 8113)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ? LIMIT ?[0m  [["creator", 42], ["LIMIT", 11]]
+  [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 42]]
+Started GET "/users.36" for 127.0.0.1 at 2020-11-20 13:56:29 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 36]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 925)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 1.1ms | Allocations: 179)
+Completed 200 OK in 111ms (Views: 103.4ms | ActiveRecord: 0.7ms | Allocations: 8088)
+
+
+Started GET "/users.36" for 127.0.0.1 at 2020-11-20 13:56:31 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 36]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 8.2ms | Allocations: 766)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+Completed 200 OK in 86ms (Views: 80.5ms | ActiveRecord: 0.8ms | Allocations: 6611)
+
+
+Started GET "/users.42" for 127.0.0.1 at 2020-11-20 13:56:40 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 42]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 21.0ms | Allocations: 4340)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+Completed 200 OK in 81ms (Views: 76.2ms | ActiveRecord: 1.3ms | Allocations: 10197)
+
+
+Started GET "/users.1" for 127.0.0.1 at 2020-11-20 13:56:50 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 188.9ms | Allocations: 4125)
+Completed 500 Internal Server Error in 198ms (ActiveRecord: 0.4ms | Allocations: 5077)
+
+
+  
+ActionView::Template::Error (undefined method `titlecase' for nil:NilClass):
+    1: <h1>Hello <%= @user.first_name.titlecase %> to show page</h1>
+    2: 
+    3: 
+    4: <% @user.created_events.each do |event| %>
+  
+app/views/users/show.html.erb:1
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (2.1ms)[0m  [1m[33mUPDATE "users" SET "first_name" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["first_name", "ImtheFirst"], ["updated_at", "2020-11-20 17:57:28.663678"], ["id", 1]]
+  [1m[35m (159.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users.1" for 127.0.0.1 at 2020-11-20 13:57:30 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 1]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 8.0ms | Allocations: 817)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+Completed 200 OK in 70ms (Views: 66.3ms | ActiveRecord: 1.2ms | Allocations: 6708)
+
+
+Started GET "/users.42" for 127.0.0.1 at 2020-11-20 13:57:42 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 42]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 3.4ms | Allocations: 787)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+Completed 200 OK in 62ms (Views: 57.7ms | ActiveRecord: 0.6ms | Allocations: 6618)
+
+
+Started GET "/users.42" for 127.0.0.1 at 2020-11-20 13:58:22 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 42]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 8.8ms | Allocations: 959)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.6ms | Allocations: 179)
+Completed 200 OK in 93ms (Views: 81.7ms | ActiveRecord: 0.7ms | Allocations: 8131)
+
+
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mEvent Update (3.1ms)[0m  [1m[33mUPDATE "events" SET "datetime" = ?, "updated_at" = ? WHERE "events"."id" = ?[0m  [["datetime", "2020-11-22"], ["updated_at", "2020-11-20 17:59:01.815883"], ["id", 1]]
+  [1m[35m (104.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users.42" for 127.0.0.1 at 2020-11-20 13:59:06 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 42]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 790)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+Completed 200 OK in 75ms (Views: 70.3ms | ActiveRecord: 0.9ms | Allocations: 6631)
+
+
