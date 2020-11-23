@@ -8375,3 +8375,325 @@ Completed 200 OK in 191ms (Views: 155.3ms | ActiveRecord: 28.4ms | Allocations: 
   [1m[36mEventUser Create (2.6ms)[0m  [1m[32mINSERT INTO "event_users" ("event_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["event_id", 2], ["user_id", 1], ["created_at", "2020-11-23 20:13:33.090833"], ["updated_at", "2020-11-23 20:13:33.090833"]]
   [1m[35m (119.6ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mEventUser Load (0.4ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."user_id" = ?[0m  [["user_id", 1]]
+Started GET "/" for ::1 at 2020-11-23 22:24:45 +0200
+  [1m[35m (13.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/guillain/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/guillain/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 20.8ms | Allocations: 295)
+Completed 200 OK in 43ms (Views: 27.2ms | ActiveRecord: 0.0ms | Allocations: 1742)
+
+
+Started GET "/users/new" for ::1 at 2020-11-23 22:25:00 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 21.0ms | Allocations: 3005)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/guillain/Desktop/microverse/Private_Events/public/packs
+[Webpacker] Hash: 4914fb11488e4e707450
+Version: webpack 4.44.2
+Time: 6386ms
+Built at: 11/23/2020 10:25:09 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-61f7c7095bfc8c2092d2.js    663 KiB  application  [emitted] [immutable]  application
+js/application-61f7c7095bfc8c2092d2.js.map    776 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-61f7c7095bfc8c2092d2.js js/application-61f7c7095bfc8c2092d2.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 770 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 6 hidden modules
+
+  Rendered layouts/_messages.html.erb (Duration: 0.9ms | Allocations: 185)
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 109)
+Completed 200 OK in 8812ms (Views: 8767.8ms | ActiveRecord: 1.5ms | Allocations: 50734)
+
+
+Started GET "/users/new" for ::1 at 2020-11-23 22:28:59 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 12.2ms | Allocations: 1301)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 1.0ms | Allocations: 176)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 107)
+Completed 200 OK in 58ms (Views: 56.5ms | ActiveRecord: 0.0ms | Allocations: 7453)
+
+
+Started GET "/users/new" for ::1 at 2020-11-23 22:29:17 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1296)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.8ms | Allocations: 175)
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 107)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.0ms | Allocations: 7445)
+
+
+Started GET "/users/new" for ::1 at 2020-11-23 22:29:56 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1305)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.9ms | Allocations: 175)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 107)
+Completed 200 OK in 48ms (Views: 46.2ms | ActiveRecord: 0.0ms | Allocations: 7445)
+
+
+Started GET "/users/new" for ::1 at 2020-11-23 22:32:06 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 12.4ms | Allocations: 1304)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 3.2ms | Allocations: 175)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 108)
+Completed 200 OK in 48ms (Views: 46.4ms | ActiveRecord: 0.0ms | Allocations: 7457)
+
+
+Started POST "/users" for ::1 at 2020-11-23 22:34:41 +0200
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"NfRoF2ZOevhMiAyWFVbyl1ThR9EXCNdy2iuT/KNFdypWn+y8o1gbHyA0nTqyIUquihd0djewsCvKbaaMrwW+ig==", "user"=>{"first_name"=>"guillain", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Create new user"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Create (14.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", ""], ["first_name", "guillain"], ["last_name", ""], ["password", ""], ["created_at", "2020-11-23 20:34:41.129497"], ["updated_at", "2020-11-23 20:34:41.129497"]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[35m (28.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+Redirected to http://localhost:3000/users
+Completed 200 OK in 73ms (ActiveRecord: 43.0ms | Allocations: 5339)
+
+
+Started GET "/users" for ::1 at 2020-11-23 22:34:41 +0200
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 43]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 58.2ms | Allocations: 5660)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 3.2ms | Allocations: 180)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 108)
+Completed 200 OK in 138ms (Views: 86.7ms | ActiveRecord: 1.3ms | Allocations: 13513)
+
+
+Started GET "/users" for ::1 at 2020-11-23 22:34:47 +0200
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 43]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 5.1ms | Allocations: 767)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 45ms (Views: 35.1ms | ActiveRecord: 0.8ms | Allocations: 6462)
+
+
+Started GET "/users" for ::1 at 2020-11-23 22:34:51 +0200
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 43]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 766)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 41ms (Views: 35.5ms | ActiveRecord: 0.3ms | Allocations: 6443)
+
+
+Started GET "/users" for ::1 at 2020-11-23 22:35:21 +0200
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 43]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 951)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 108)
+  Rendered layouts/_messages.html.erb (Duration: 3.0ms | Allocations: 174)
+Completed 200 OK in 56ms (Views: 43.9ms | ActiveRecord: 0.8ms | Allocations: 8105)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/users" for ::1 at 2020-11-23 22:36:19 +0200
+Processing by UsersController#show as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :set_user rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 201)
+
+
+Started GET "/login" for ::1 at 2020-11-23 22:36:19 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1043)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 0.0ms | Allocations: 6159)
+
+
+Started GET "/login" for ::1 at 2020-11-23 22:37:16 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 936)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.6ms | Allocations: 112)
+  Rendered layouts/_messages.html.erb (Duration: 0.7ms | Allocations: 174)
+Completed 200 OK in 59ms (Views: 52.8ms | ActiveRecord: 0.0ms | Allocations: 7049)
+
+
+Started GET "/login" for ::1 at 2020-11-23 22:37:28 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 937)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 109)
+  Rendered layouts/_messages.html.erb (Duration: 0.7ms | Allocations: 174)
+Completed 200 OK in 34ms (Views: 32.0ms | ActiveRecord: 0.0ms | Allocations: 7081)
+
+
+Started GET "/login" for ::1 at 2020-11-23 22:37:31 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 670)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.0ms | Allocations: 5314)
+
+
+Started GET "/login" for ::1 at 2020-11-23 22:38:15 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 663)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 6)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.0ms | Allocations: 5310)
+
+
+Started GET "/login" for ::1 at 2020-11-23 22:41:00 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 937)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 222.3ms | Allocations: 66984)
+Completed 500 Internal Server Error in 250ms (ActiveRecord: 0.0ms | Allocations: 73537)
+
+
+  
+ActionView::Template::Error (undefined method `logged_in?' for #<#<Class:0x000055cdd2d98e38>:0x000055cdd2d846b8>
+Did you mean?  logger?):
+    28:       </li>
+    29:     </ul>
+    30:     <form class="form-inline my-2 my-lg-0">
+    31:       <% if logged_in? %>
+    32:         <button class="btn btn-danger my-2 my-sm-0" >Log out</button>
+    33:       <% else %>
+    34:         <button class="btn btn-primary my-2 my-sm-0" >Log in</button>
+  
+app/views/layouts/_navigation.html.erb:31
+app/views/layouts/application.html.erb:14
+Started GET "/login" for ::1 at 2020-11-23 22:42:24 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/home/guillain/Desktop/microverse/Private_Events/app/controllers/application_controller.rb:3: syntax error, unexpected ':', expecting `end'
+  helper_method: :logged_in
+               ^
+):
+  
+app/controllers/application_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/application_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/application_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/sessions_controller.rb:1:in `<main>'
+Started GET "/login" for ::1 at 2020-11-23 22:42:50 +0200
+Started GET "/login" for ::1 at 2020-11-23 22:43:19 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 682)
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 663)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 12)
+  Rendered layouts/_messages.html.erb (Duration: 1.0ms | Allocations: 174)
+Completed 200 OK in 52ms (Views: 49.7ms | ActiveRecord: 0.0ms | Allocations: 8942)
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 12)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 71ms (Views: 69.8ms | ActiveRecord: 0.0ms | Allocations: 11525)
+
+
+Started GET "/login" for ::1 at 2020-11-23 22:43:24 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 670)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 11)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 80ms (Views: 77.8ms | ActiveRecord: 0.0ms | Allocations: 5328)
+
+
+Started GET "/login" for ::1 at 2020-11-23 22:49:08 +0200
+Started GET "/login" for ::1 at 2020-11-23 22:53:14 +0200
+Started GET "/login" for ::1 at 2020-11-23 22:53:18 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+Started GET "/login" for ::1 at 2020-11-23 22:53:18 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendering sessions/new.html.erb within layouts/application
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 663)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 14.7ms | Allocations: 2556)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 1381)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 2.1ms | Allocations: 217)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.7ms | Allocations: 174)
+Completed 200 OK in 74ms (Views: 72.9ms | ActiveRecord: 0.0ms | Allocations: 17305)
+
+
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 46)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 89ms (Views: 71.7ms | ActiveRecord: 0.0ms | Allocations: 19703)
+
+
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 40)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 82ms (Views: 74.0ms | ActiveRecord: 0.0ms | Allocations: 17752)
+
+
+Started GET "/login" for ::1 at 2020-11-23 22:53:32 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 665)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 40)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 31ms (Views: 26.7ms | ActiveRecord: 0.0ms | Allocations: 5346)
+
+

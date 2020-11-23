@@ -1,23 +1,23 @@
 <%= form_with model: @user, method: :post do |form| %>
   
-  <ul>
+  <div class="form-group mt-5">
     <%= form.label :first_name %>
-    <%= form.text_field :first_name, placeholder: "Your first name here"%>
-  </ul>
-  <ul>
+    <%= form.text_field :first_name, class: "form-control", placeholder: "Your first name here"%>
+  </div>
+  <div class="form-group">
     <%= form.label :last_name %>
-    <%= form.text_field :last_name, placeholder: "Your last name here"%>
-  </ul>
-  <ul>
+    <%= form.text_field :last_name, class: "form-control", placeholder: "Your last name here"%>
+  </div>
+  <div class="form-group">
     <%= form.label :email %>
-    <%= form.email_field :email, placeholder: "Your email here" %>
-  </ul>
-  <ul>
+    <%= form.email_field :email, class: "form-control", placeholder: "Your email here" %>
+  </div>
+  <div class="form-group">
     <%= form.label :password %>
-    <%= form.password_field :password, placeholder: "Enter a secure password (of at least 8 characters)" %>
-  </ul>
-  <ul>
-    <%= form.submit "Create new user" %>
-  </ul>
+    <%= form.password_field :password, class: "form-control", placeholder: "Enter a secure password (of at least 8 characters)" %>
+  </div>
+  <div class="form-group">
+    <%= form.submit "Create new user", class: "btn btn-lg btn-primary"  %>
+  </div>
   <br>
 <% end %>
