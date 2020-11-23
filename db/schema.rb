@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_11_20_212239) do
     t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "creator"
+    t.integer "creator_id"
     t.string "description"
   end
 
@@ -40,5 +40,5 @@ ActiveRecord::Schema.define(version: 2020_11_20_212239) do
 
   add_foreign_key "event_users", "events"
   add_foreign_key "event_users", "users"
-  add_foreign_key "events", "users", column: "creator"
+  add_foreign_key "events", "users", column: "creator_id"
 end

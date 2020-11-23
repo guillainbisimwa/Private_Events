@@ -8135,3 +8135,243 @@ Processing by EventsController#index as HTML
 Completed 200 OK in 92ms (Views: 90.0ms | ActiveRecord: 0.5ms | Allocations: 6236)
 
 
+Started GET "/events" for 127.0.0.1 at 2020-11-23 10:38:31 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (167.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:3
+  Rendered events/index.html.erb within layouts/application (Duration: 351.6ms | Allocations: 5759)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 10.1ms | Allocations: 193)
+Completed 200 OK in 10038ms (Views: 5968.9ms | ActiveRecord: 169.5ms | Allocations: 20920)
+
+
+Started GET "/users" for 127.0.0.1 at 2020-11-23 10:42:52 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :set_user rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 412)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-11-23 10:42:52 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1008.2ms | Allocations: 2601)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+Completed 200 OK in 1067ms (Views: 1063.6ms | ActiveRecord: 0.0ms | Allocations: 8721)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-23 10:43:04 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"Vu2KE7zCEAALs85HL1T8/pjFdN28jv++11k6gpGVwNufaesMRd9IlzMlXIEwXE3qN+NWVVKmDm3V9ygJe66ZmQ==", "session"=>{"first_name"=>"john", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (16.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "john"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/users.34
+Completed 200 OK in 39ms (ActiveRecord: 18.3ms | Allocations: 7945)
+
+
+Started GET "/users.34" for 127.0.0.1 at 2020-11-23 10:43:04 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 34]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 565.2ms | Allocations: 9173)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.3ms | Allocations: 22)
+Completed 200 OK in 636ms (Views: 624.6ms | ActiveRecord: 1.8ms | Allocations: 16522)
+
+
+Started GET "/users.36" for 127.0.0.1 at 2020-11-23 10:43:21 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 34]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 783)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+Completed 200 OK in 69ms (Views: 63.7ms | ActiveRecord: 0.7ms | Allocations: 7332)
+
+
+Started GET "/users.42" for 127.0.0.1 at 2020-11-23 10:43:28 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 34]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 785)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+Completed 200 OK in 70ms (Views: 65.7ms | ActiveRecord: 0.5ms | Allocations: 7354)
+
+
+Started GET "/users.42" for 127.0.0.1 at 2020-11-23 15:33:18 -0400
+  [1m[35m (7.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 34]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 433.7ms | Allocations: 9749)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in C:/Users/Owner/Desktop/Microverse/Ruby On Rails/Private_Events/public/packs
+[Webpacker] Hash: 4914fb11488e4e707450
+Version: webpack 4.44.2
+Time: 24713ms
+Built at: 11/23/2020 3:34:09 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-61f7c7095bfc8c2092d2.js    663 KiB  application  [emitted] [immutable]  application
+js/application-61f7c7095bfc8c2092d2.js.map    776 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-61f7c7095bfc8c2092d2.js js/application-61f7c7095bfc8c2092d2.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 770 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 6 hidden modules
+
+  Rendered layouts/_messages.html.erb (Duration: 2.2ms | Allocations: 190)
+  Rendered layouts/_navigation.html.erb (Duration: 34.3ms | Allocations: 109)
+Completed 200 OK in 50741ms (Views: 49874.2ms | ActiveRecord: 6.6ms | Allocations: 33328)
+
+
+Started GET "/users.42" for 127.0.0.1 at 2020-11-23 15:35:02 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 34]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 785)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered layouts/_navigation.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 79ms (Views: 67.8ms | ActiveRecord: 1.0ms | Allocations: 7413)
+
+
+Started GET "/users.42" for 127.0.0.1 at 2020-11-23 15:35:52 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 34]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 28.0ms | Allocations: 783)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 2068ms (Views: 2059.2ms | ActiveRecord: 0.6ms | Allocations: 38691)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-11-23 15:36:20 -0400
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (28.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:3
+  Rendered events/index.html.erb within layouts/application (Duration: 53.3ms | Allocations: 912)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 191ms (Views: 155.3ms | ActiveRecord: 28.4ms | Allocations: 9746)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "event_users" ON "events"."id" = "event_users"."event_id" WHERE "event_users"."user_id" = ? AND "event_users"."attended_event_type" = ? LIMIT ?[0m  [["user_id", 1], ["attended_event_type", "User"], ["LIMIT", 11]]
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEventUser Load (0.3ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEventUser Load (0.3ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."event_id" = ? LIMIT ?[0m  [["event_id", 1], ["LIMIT", 11]]
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mEventUser Load (0.5ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."event_id" = ? LIMIT ?[0m  [["event_id", 1], ["LIMIT", 11]]
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEventUser Load (0.7ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."event_id" = ? LIMIT ?[0m  [["event_id", 1], ["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEventUser Load (0.3ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mEventUser Load (0.3ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEventUser Create (20.7ms)[0m  [1m[32mINSERT INTO "event_users" ("event_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["event_id", 1], ["user_id", 1], ["created_at", "2020-11-23 20:01:39.929700"], ["updated_at", "2020-11-23 20:01:39.929700"]]
+  [1m[35m (102.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mEventUser Load (0.2ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEventUser Load (1.1ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."event_id" = ? LIMIT ?[0m  [["event_id", 1], ["LIMIT", 11]]
+  [1m[36mEventUser Load (0.4ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mEventUser Load (0.4ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."event_id" = ? LIMIT ?[0m  [["event_id", 1], ["LIMIT", 11]]
+  [1m[36mEventUser Load (0.5ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."event_id" = ? ORDER BY "event_users"."id" ASC LIMIT ?[0m  [["event_id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  [1m[36mEventUser Load (0.3ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."event_id" = ? ORDER BY "event_users"."id" ASC LIMIT ?[0m  [["event_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 36], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEventUser Create (2.1ms)[0m  [1m[32mINSERT INTO "event_users" ("event_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["event_id", 1], ["user_id", 36], ["created_at", "2020-11-23 20:04:47.126514"], ["updated_at", "2020-11-23 20:04:47.126514"]]
+  [1m[35m (139.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mEventUser Load (0.3ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEventUser Load (0.4ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."event_id" = ? LIMIT ?[0m  [["event_id", 1], ["LIMIT", 11]]
+  [1m[36mEventUser Load (0.3ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."event_id" = ? ORDER BY "event_users"."id" ASC LIMIT ?[0m  [["event_id", 1], ["LIMIT", 1]]
+  [1m[36mEventUser Load (0.4ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."event_id" = ? LIMIT ?[0m  [["event_id", 1], ["LIMIT", 11]]
+  [1m[36mEventUser Load (0.3ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."event_id" = ? LIMIT ?[0m  [["event_id", 1], ["LIMIT", 11]]
+  [1m[36mEventUser Load (0.4ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."event_id" = ? ORDER BY "event_users"."id" ASC LIMIT ?[0m  [["event_id", 1], ["LIMIT", 1]]
+  [1m[36mEventUser Load (0.5ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEventUser Create (2.6ms)[0m  [1m[32mINSERT INTO "event_users" ("event_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["event_id", 2], ["user_id", 1], ["created_at", "2020-11-23 20:13:33.090833"], ["updated_at", "2020-11-23 20:13:33.090833"]]
+  [1m[35m (119.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mEventUser Load (0.4ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."user_id" = ?[0m  [["user_id", 1]]

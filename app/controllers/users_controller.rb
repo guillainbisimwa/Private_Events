@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 	private
 
 	def set_user
-		if !logged_in?
+		unless logged_in?
 			redirect_to login_path
 		else
 			@user = User.find(session[:user_id])
