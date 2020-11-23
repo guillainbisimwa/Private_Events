@@ -1,12 +1,12 @@
 <%= form_with model: @event, method: :post do |form| %>
   
-  <ul>
+  <ul class="mt-5">
     <h2>Description of your new Event! </h2>
     <%= form.text_area :description, rows: 10, cols: 100, placeholder: "Event description here"%>
   </ul>
   
   <ul>
-    <%= form.submit "Create an event" %>
+    <%= form.submit "Create an event", class: "btn btn-lg btn-primary" %>
   </ul>
   <br>
 <% end %>
