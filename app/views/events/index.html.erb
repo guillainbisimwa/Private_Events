@@ -1,9 +1,9 @@
 <h1>Index Events</h1>
 
 <% @events.each do |event| %>
-  <p>Event's Description is: <%= event.description %><p>
-<!-- 
-  <p>Event's Title is: <%= event.title %><p>
-  <p>Event Location is: <%= event.location %><p>
-  <p>Event's Date is: <%= event.datetime %><p>-->
+  <% unless event.title.nil? %>
+    <p>Event's Title is: <%= event.title %></p>
+  <% else %>
+    <p>Event's Description is: <%= event.description %></p>
+  <% end %>
 <% end %>
