@@ -2,7 +2,7 @@
 
 <h2>Past Events</h2>
 <div class=" row">
-  <% @events.each do |event| %>
+  <% Event.datetimepast.each do |event| %>
     <div class="col-sm-3 my-3">
       <div class="card">
         <div class="card-body">
@@ -25,7 +25,7 @@
 
 <h2>Upcoming Events</h2>
 <div class=" row">
-  <% @events.each do |event| %>
+  <% Event.datetimefuture.each do |event| %>
     <div class="col-sm-3 my-3">
       <div class="card">
         <div class="card-body">

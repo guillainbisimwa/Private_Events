@@ -1,17 +1,8 @@
 class EventsController < ApplicationController
+  before_action :require_user, except: %i[index show]
 
-  before_action :require_user, except: [:index, :show]
-  
   def index
-    unless params[:datetimeminus].nil? or params[:datetimeminus].nil?
-      if params[:datetimeminus] < DateTime.now
-        @events = Event.datetimeminus
-      elsif params[:datetimebigger] > DateTime.now
-        @events = Event.datetimebigger
-      end
-    else
-      @events = Event.all
-    end
+    @events = Event.all
   end
 
   def new
@@ -26,7 +17,7 @@ class EventsController < ApplicationController
       redirect_to events_path
     else
       flash[:alert] = @event.errors.full_messages
-      redirect_to "new"
+      redirect_to 'new'
     end
   end
 
@@ -36,7 +27,7 @@ class EventsController < ApplicationController
     else
       @event = Event.find(params[:id].to_i)
       @user = User.find(@event.creator)
-      @attendees_id = @event.attendees.all      
+      @attendees_id = @event.attendees.all
     end
   end
 
@@ -45,5 +36,4 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:description, :datetime)
   end
-
 end
