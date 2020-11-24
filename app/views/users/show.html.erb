@@ -10,9 +10,11 @@
         <h5 class="card-title" >MY EVENT</h5>
 
         <% unless event.title.nil? %>
-          <h5 class="card-title" ><%= event.title %></h5>
+          <p class="card-title" ><%= event.title %></p>
+          <p class="card-title" ><%= event.datetime %></p>
         <% else %>
           <p class="card-text"> <%= event.description %></p>
+          <p class="card-text"> <%= event.datetime %></p>
         <% end %>
       </div>
       <div class="card-footer">
@@ -27,24 +29,27 @@
 
 <div class="card-group row">
   <% @user.attended_event.each do |event| %>
-    <% if event.search_event(event.event_id).datetime > DateTime.now %>
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title" >MY EVENT</h5>
+    <% unless event.search_event(event.event_id).datetime.nil? %>
+      <% if event.search_event(event.event_id).datetime > DateTime.now %>
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title" >MY EVENT</h5>
 
-          <% unless event.search_event(event.event_id).title.nil? %>
-            <h5 class="card-title" ><%= event.search_event(event.event_id).title %></h5>
-          <% else %>
-            <p class="card-text"> 
-            <%= event.search_event(event.event_id).description %></p>
-          <% end %>
+              <% unless event.search_event(event.event_id).title.nil? %>
+                <p class="card-title" ><%= event.search_event(event.event_id).title %></p>
+                <p class="card-title" ><%= event.search_event(event.event_id).datetime %></p>
+              <% else %>
+                <p class="card-text"><%= event.search_event(event.event_id).description %></p>
+                <p class="card-text"><%= event.search_event(event.event_id).datetime %></p>
+              <% end %>
+            </div>
+            <div class="card-footer">
+                <%= link_to "Show the event", event.search_event(event.event_id) %>
+            </div>
+          </div>
         </div>
-        <div class="card-footer">
-            <%= link_to "Show the event", event.search_event(event.event_id) %>
-        </div>
-      </div>
-    </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>
@@ -54,24 +59,27 @@
 
 <div class="card-group row">
   <% @user.attended_event.each do |event| %>
-    <% if event.search_event(event.event_id).datetime <= DateTime.now %>
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title" >MY EVENT</h5>
+    <% unless event.search_event(event.event_id).datetime.nil? %>
+      <% if event.search_event(event.event_id).datetime <= DateTime.now %>
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title" >MY EVENT</h5>
 
-          <% unless event.search_event(event.event_id).title.nil? %>
-            <h5 class="card-title" ><%= event.search_event(event.event_id).title %></h5>
-          <% else %>
-            <p class="card-text"> 
-            <%= event.search_event(event.event_id).description %></p>
-          <% end %>
+              <% unless event.search_event(event.event_id).title.nil? %>
+                <p class="card-title" ><%= event.search_event(event.event_id).title %></p>
+                <p class="card-title" ><%= event.search_event(event.event_id).datetime %></p>
+              <% else %>
+                <p class="card-text"><%= event.search_event(event.event_id).description %></p>
+                <p class="card-text" ><%= event.search_event(event.event_id).datetime %></p>
+              <% end %>
+            </div>
+            <div class="card-footer">
+                <%= link_to "Show the event", event.search_event(event.event_id) %>
+            </div>
+          </div>
         </div>
-        <div class="card-footer">
-            <%= link_to "Show the event", event.search_event(event.event_id) %>
-        </div>
-      </div>
-    </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>

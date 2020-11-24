@@ -19111,3 +19111,1158 @@ app/controllers/events_controller.rb:6:in `index'
   [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."datetime >" = ? LIMIT ?[0m  [["datetime >", "2020-11-24 20:46:20.879494"], ["LIMIT", 11]]
   [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."datetime >" = ? LIMIT ?[0m  [["datetime >", "2020-11-24 20:47:33.327138"], ["LIMIT", 11]]
   [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."datetime > ?" = ? LIMIT ?[0m  [["datetime > ?", "2020-11-24 20:47:47.674905"], ["LIMIT", 11]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime > '2020-11-24 21:17:11.387264') LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."datetime >" = ? LIMIT ?[0m  [["datetime >", "2020-11-24 21:18:27.793610"], ["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime < '2020-11-24 21:20:18.761180') LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime > '2020-11-24 21:20:28.477213') LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/events" for 127.0.0.1 at 2020-11-24 17:21:29 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime < '2020-11-24 21:21:30.277071')[0m
+  ↳ app/views/events/index.html.erb:3
+  Rendered events/index.html.erb within layouts/application (Duration: 108.2ms | Allocations: 6090)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 2.4ms | Allocations: 496)
+  Rendered layouts/_messages.html.erb (Duration: 4.5ms | Allocations: 189)
+Completed 200 OK in 337ms (Views: 301.6ms | ActiveRecord: 3.6ms | Allocations: 27783)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2020-11-24 17:21:34 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:26:in `show'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:29:in `show'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:30:in `show'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mEventUser Load (0.4ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."event_id" = ?[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:43
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:6:in `search_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:6:in `search_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:6:in `search_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:6:in `search_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:6:in `search_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:6:in `search_user'
+  Rendered events/show.html.erb within layouts/application (Duration: 86.0ms | Allocations: 6884)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 133)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 315ms (Views: 193.7ms | ActiveRecord: 6.6ms | Allocations: 25721)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-11-24 17:21:36 -0400
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (3.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime < '2020-11-24 21:21:36.927944')[0m
+  ↳ app/views/events/index.html.erb:3
+  Rendered events/index.html.erb within layouts/application (Duration: 21.7ms | Allocations: 832)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 130)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 174ms (Views: 169.9ms | ActiveRecord: 3.4ms | Allocations: 9008)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-11-24 17:21:52 -0400
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (6.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime < '2020-11-24 21:21:52.192077')[0m
+  ↳ app/views/events/index.html.erb:3
+  Rendered events/index.html.erb within layouts/application (Duration: 30.0ms | Allocations: 832)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 130)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 155ms (Views: 146.1ms | ActiveRecord: 6.5ms | Allocations: 8993)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-11-24 17:25:55 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1908)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms | Allocations: 4578)
+
+
+  
+ActionView::Template::Error (uninitialized constant #<Class:0x000000000f089968>::Events):
+    2: 
+    3: <div class=" row">
+    4:   <h2>Past Events</h2>
+    5:   <% Events.past.each do |event| %>
+    6:     <div class="col-sm-3 my-3">
+    7:       <div class="card">
+    8:         <div class="card-body">
+  
+app/views/events/index.html.erb:5
+Started GET "/events" for 127.0.0.1 at 2020-11-24 17:26:13 -0400
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime < '2020-11-24 21:26:13.295900')[0m
+  ↳ app/views/events/index.html.erb:5
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime > '2020-11-24 21:26:13.333157')[0m
+  ↳ app/views/events/index.html.erb:28
+  Rendered events/index.html.erb within layouts/application (Duration: 72.1ms | Allocations: 6562)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 8.3ms | Allocations: 474)
+  Rendered layouts/_messages.html.erb (Duration: 1.1ms | Allocations: 178)
+Completed 200 OK in 194ms (Views: 180.2ms | ActiveRecord: 4.4ms | Allocations: 16529)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-11-24 17:27:06 -0400
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime < '2020-11-24 21:27:06.786633')[0m
+  ↳ app/views/events/index.html.erb:5
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime > '2020-11-24 21:27:06.811543')[0m
+  ↳ app/views/events/index.html.erb:28
+  Rendered events/index.html.erb within layouts/application (Duration: 48.4ms | Allocations: 1974)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.7ms | Allocations: 473)
+  Rendered layouts/_messages.html.erb (Duration: 0.8ms | Allocations: 178)
+Completed 200 OK in 168ms (Views: 161.4ms | ActiveRecord: 1.7ms | Allocations: 11872)
+
+
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime < '2020-11-24 21:27:34.978984')[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime < '2020-11-24 21:27:51.116391')[0m
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime < '2020-11-24 21:28:30.358976')[0m
+Started GET "/events" for 127.0.0.1 at 2020-11-24 17:30:10 -0400
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime < '2020-11-24 21:30:10.637516')[0m
+  ↳ app/views/events/index.html.erb:5
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime > '2020-11-24 21:30:10.660953')[0m
+  ↳ app/views/events/index.html.erb:28
+  Rendered events/index.html.erb within layouts/application (Duration: 42.4ms | Allocations: 2011)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 2.6ms | Allocations: 473)
+  Rendered layouts/_messages.html.erb (Duration: 0.6ms | Allocations: 178)
+Completed 200 OK in 171ms (Views: 166.0ms | ActiveRecord: 1.1ms | Allocations: 11906)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-11-24 17:31:07 -0400
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime < '2020-11-24 21:31:07.494683')[0m
+  ↳ app/views/events/index.html.erb:5
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime > '2020-11-24 21:31:07.511621')[0m
+  ↳ app/views/events/index.html.erb:28
+  Rendered events/index.html.erb within layouts/application (Duration: 62.8ms | Allocations: 2043)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.8ms | Allocations: 473)
+  Rendered layouts/_messages.html.erb (Duration: 0.8ms | Allocations: 178)
+Completed 200 OK in 219ms (Views: 212.7ms | ActiveRecord: 1.0ms | Allocations: 11934)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-11-24 17:31:36 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 20.5ms | Allocations: 2655)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 134)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 123ms (Views: 118.9ms | ActiveRecord: 0.0ms | Allocations: 11362)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-24 17:31:39 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"Jx/Ua0wCTaqBe6iFjRfK8TMpKocLcOELOpOXF2L3u+BfW84JZXsS4vUjQJHWe3bPmSXhYahOA7mviL9w9I3pYQ==", "session"=>{"first_name"=>"john", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "john"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/users.34
+Completed 200 OK in 85ms (ActiveRecord: 8.5ms | Allocations: 7133)
+
+
+Started GET "/users.34" for 127.0.0.1 at 2020-11-24 17:31:39 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 34]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mEventUser Load (0.7ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."user_id" = ?[0m  [["user_id", 34]]
+  ↳ app/views/users/show.html.erb:29
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  Rendered users/show.html.erb within layouts/application (Duration: 91.1ms | Allocations: 9237)
+Completed 500 Internal Server Error in 149ms (ActiveRecord: 13.8ms | Allocations: 11495)
+
+
+  
+ActionView::Template::Error (undefined method `>' for nil:NilClass):
+    27: 
+    28: <div class="card-group row">
+    29:   <% @user.attended_event.each do |event| %>
+    30:     <% if event.search_event(event.event_id).datetime > DateTime.now %>
+    31:     <div class="col-sm-3">
+    32:       <div class="card">
+    33:         <div class="card-body">
+  
+app/views/users/show.html.erb:30
+app/views/users/show.html.erb:29
+Started GET "/users.34" for 127.0.0.1 at 2020-11-24 17:33:54 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 34]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mEventUser Load (0.3ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."user_id" = ?[0m  [["user_id", 34]]
+  ↳ app/views/users/show.html.erb:29
+  [1m[36mEvent Load (3.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  Rendered users/show.html.erb within layouts/application (Duration: 381.3ms | Allocations: 8553)
+Completed 500 Internal Server Error in 462ms (ActiveRecord: 7.1ms | Allocations: 10794)
+
+
+  
+ActionView::Template::Error (undefined method `<=' for nil:NilClass):
+    56: 
+    57: <div class="card-group row">
+    58:   <% @user.attended_event.each do |event| %>
+    59:     <% if event.search_event(event.event_id).datetime <= DateTime.now %>
+    60:     <div class="col-sm-3">
+    61:       <div class="card">
+    62:         <div class="card-body">
+  
+app/views/users/show.html.erb:59
+app/views/users/show.html.erb:58
+Started GET "/users.34" for 127.0.0.1 at 2020-11-24 17:34:35 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 34]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mEventUser Load (0.5ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."user_id" = ?[0m  [["user_id", 34]]
+  ↳ app/views/users/show.html.erb:29
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  Rendered users/show.html.erb within layouts/application (Duration: 399.8ms | Allocations: 10808)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.7ms | Allocations: 548)
+  Rendered layouts/_messages.html.erb (Duration: 1.1ms | Allocations: 182)
+Completed 200 OK in 587ms (Views: 546.0ms | ActiveRecord: 3.1ms | Allocations: 21937)
+
+
+Started GET "/users.34" for 127.0.0.1 at 2020-11-24 17:36:11 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 34]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mEventUser Load (0.3ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."user_id" = ?[0m  [["user_id", 34]]
+  ↳ app/views/users/show.html.erb:29
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  Rendered users/show.html.erb within layouts/application (Duration: 321.0ms | Allocations: 11349)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 2.1ms | Allocations: 545)
+  Rendered layouts/_messages.html.erb (Duration: 0.8ms | Allocations: 178)
+Completed 200 OK in 468ms (Views: 430.6ms | ActiveRecord: 3.4ms | Allocations: 22439)
+
+
+Started GET "/users.34" for 127.0.0.1 at 2020-11-24 17:36:57 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 34]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mEventUser Load (0.8ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."user_id" = ?[0m  [["user_id", 34]]
+  ↳ app/views/users/show.html.erb:29
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  Rendered users/show.html.erb within layouts/application (Duration: 395.6ms | Allocations: 11890)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 6.6ms | Allocations: 545)
+  Rendered layouts/_messages.html.erb (Duration: 0.9ms | Allocations: 178)
+Completed 200 OK in 573ms (Views: 530.5ms | ActiveRecord: 3.6ms | Allocations: 22982)
+
+
+Started GET "/users.34" for 127.0.0.1 at 2020-11-24 17:37:42 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 34]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mEventUser Load (0.4ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."user_id" = ?[0m  [["user_id", 34]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  Rendered users/show.html.erb within layouts/application (Duration: 514.9ms | Allocations: 11922)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.6ms | Allocations: 545)
+  Rendered layouts/_messages.html.erb (Duration: 0.8ms | Allocations: 178)
+Completed 200 OK in 708ms (Views: 644.7ms | ActiveRecord: 4.4ms | Allocations: 23022)
+
+
+Started GET "/users.34" for 127.0.0.1 at 2020-11-24 17:37:48 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 34]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mEventUser Load (0.4ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."user_id" = ?[0m  [["user_id", 34]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  Rendered users/show.html.erb within layouts/application (Duration: 389.0ms | Allocations: 11196)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 207)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 541ms (Views: 500.0ms | ActiveRecord: 3.4ms | Allocations: 20449)
+
+
+Started GET "/events/6" for 127.0.0.1 at 2020-11-24 17:38:07 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:26:in `show'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:29:in `show'
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:30:in `show'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mEventUser Load (0.7ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."event_id" = ?[0m  [["event_id", 6]]
+  ↳ app/views/events/show.html.erb:43
+  Rendered events/show.html.erb within layouts/application (Duration: 21.8ms | Allocations: 1614)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 206)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 180ms (Views: 115.1ms | ActiveRecord: 3.6ms | Allocations: 12728)
+
+
+Started GET "/events/6" for 127.0.0.1 at 2020-11-24 17:39:04 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (4.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:26:in `show'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:29:in `show'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:30:in `show'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mEventUser Load (1.0ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."event_id" = ?[0m  [["event_id", 6]]
+  ↳ app/views/events/show.html.erb:43
+  Rendered events/show.html.erb within layouts/application (Duration: 69.2ms | Allocations: 1622)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 2.0ms | Allocations: 546)
+  Rendered layouts/_messages.html.erb (Duration: 1.2ms | Allocations: 178)
+Completed 200 OK in 286ms (Views: 208.4ms | ActiveRecord: 5.7ms | Allocations: 13253)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-11-24 17:39:15 -0400
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime < '2020-11-24 21:39:15.289488')[0m
+  ↳ app/views/events/index.html.erb:5
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime > '2020-11-24 21:39:15.308754')[0m
+  ↳ app/views/events/index.html.erb:28
+  Rendered events/index.html.erb within layouts/application (Duration: 80.4ms | Allocations: 2041)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 17.9ms | Allocations: 781)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 301ms (Views: 291.8ms | ActiveRecord: 3.3ms | Allocations: 10985)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2020-11-24 17:39:18 -0400
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 205.7ms | Allocations: 3641)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 208)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 352ms (Views: 305.2ms | ActiveRecord: 0.7ms | Allocations: 12457)
+
+
+Started POST "/events" for 127.0.0.1 at 2020-11-24 17:39:42 -0400
+Processing by EventsController#create as JS
+  Parameters: {"authenticity_token"=>"/83LWgfGcOjhiXDbEV8CxkVEWX7342LYaSRyPwGo327eP8XAnBXPttKbE0UI+CJHchRzCHuT2amybOFsQCn3Rw==", "event"=>{"description"=>"New event to see the datetime in the frontend", "datetime"=>"2020-12-24"}, "commit"=>"Create an event"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:16:in `create'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:16:in `create'
+  [1m[36mEvent Create (24.3ms)[0m  [1m[32mINSERT INTO "events" ("datetime", "created_at", "updated_at", "creator", "description") VALUES (?, ?, ?, ?, ?)[0m  [["datetime", "2020-12-24"], ["created_at", "2020-11-24 21:39:42.986819"], ["updated_at", "2020-11-24 21:39:42.986819"], ["creator", 34], ["description", "New event to see the datetime in the frontend"]]
+  ↳ app/controllers/events_controller.rb:16:in `create'
+  [1m[35m (137.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:3000/events
+Completed 200 OK in 327ms (ActiveRecord: 162.6ms | Allocations: 6441)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-11-24 17:39:43 -0400
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (5.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime < '2020-11-24 21:39:43.339239')[0m
+  ↳ app/views/events/index.html.erb:5
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime > '2020-11-24 21:39:43.416584')[0m
+  ↳ app/views/events/index.html.erb:28
+  Rendered events/index.html.erb within layouts/application (Duration: 93.0ms | Allocations: 2044)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 19.1ms | Allocations: 774)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 22)
+Completed 200 OK in 188ms (Views: 178.7ms | ActiveRecord: 8.0ms | Allocations: 10853)
+
+
+Started GET "/users.34" for 127.0.0.1 at 2020-11-24 17:39:55 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 34]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mEventUser Load (1.1ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."user_id" = ?[0m  [["user_id", 34]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  Rendered users/show.html.erb within layouts/application (Duration: 415.7ms | Allocations: 11973)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 207)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 586ms (Views: 554.5ms | ActiveRecord: 4.2ms | Allocations: 22109)
+
+
+Started GET "/events/12" for 127.0.0.1 at 2020-11-24 17:39:59 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:26:in `show'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:29:in `show'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:30:in `show'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mEventUser Load (0.3ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."event_id" = ?[0m  [["event_id", 12]]
+  ↳ app/views/events/show.html.erb:43
+  Rendered events/show.html.erb within layouts/application (Duration: 25.6ms | Allocations: 1252)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 206)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 245ms (Views: 139.2ms | ActiveRecord: 1.5ms | Allocations: 11147)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-11-24 17:45:20 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 31.6ms | Allocations: 1310)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 0.0ms | Allocations: 4110)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Index Events</h1>
+
+<h2>Past Events</h2>
+<div class=" row">
+  <!--<% Event.past.each do |event| %>-->
+  <% @event.datetimeminus.each do |event| %>
+    <div class="col-sm-3 my-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title" >EVENT</h5>
+          <% unless event.title.nil? %>
+            <p class="card-title" ><%= event.title %></p>
+            <p class="card-title" ><%= event.datetime %></p>
+          <% else %>
+            <p class="card-text"> <%= event.description %></p>
+            <p class="card-title" ><%= event.datetime %></p>
+          <% end %>
+        </div>
+        <div class="card-footer">
+          <%= link_to "Show the event", event%>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<h2>Upcoming Events</h2>
+<div class=" row">
+  <% Event.future.each do |event| %>
+    <div class="col-sm-3 my-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title" >EVENT</h5>
+     
+          <% unless event.title.nil? %>
+            <p class="card-title" ><%= event.title %></p>
+            <p class="card-title" ><%= event.datetime %></p>
+
+          <% else %>
+            <p class="card-text"> <%= event.description %></p>
+            <p class="card-title" ><%= event.datetime %></p>
+          <% end %>
+        </div>
+        <div class="card-footer">
+          <%= link_to "Show the event", event%>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+):
+1:    <h1>Index Events</h1>
+2:    
+3:    <h2>Past Events</h2>
+4:    <div class=" row">
+5:      <!--<% Event.past.each do |event| %>-->
+6:      <% @event.datetimeminus.each do |event| %>
+7:        <div class="col-sm-3 my-3">
+8:          <div class="card">
+9:            <div class="card-body">
+10:              <h5 class="card-title" >EVENT</h5>
+11:              <% unless event.title.nil? %>
+12:                <p class="card-title" ><%= event.title %></p>
+13:                <p class="card-title" ><%= event.datetime %></p>
+14:              <% else %>
+15:                <p class="card-text"> <%= event.description %></p>
+16:                <p class="card-title" ><%= event.datetime %></p>
+17:              <% end %>
+18:            </div>
+19:            <div class="card-footer">
+20:              <%= link_to "Show the event", event%>
+21:            </div>
+22:          </div>
+23:        </div>
+24:      <% end %>
+25:    </div>
+26:    
+27:    <h2>Upcoming Events</h2>
+28:    <div class=" row">
+29:      <% Event.future.each do |event| %>
+30:        <div class="col-sm-3 my-3">
+31:          <div class="card">
+32:            <div class="card-body">
+33:              <h5 class="card-title" >EVENT</h5>
+34:         
+35:              <% unless event.title.nil? %>
+36:                <p class="card-title" ><%= event.title %></p>
+37:                <p class="card-title" ><%= event.datetime %></p>
+38:    
+39:              <% else %>
+40:                <p class="card-text"> <%= event.description %></p>
+41:                <p class="card-title" ><%= event.datetime %></p>
+42:              <% end %>
+43:            </div>
+44:            <div class="card-footer">
+45:              <%= link_to "Show the event", event%>
+46:            </div>
+47:          </div>
+48:        </div>
+49:      <% end %>
+50:    </div>
+  
+app/views/events/index.html.erb:52: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:52: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:52: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:52: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:52: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:52: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/events" for 127.0.0.1 at 2020-11-24 17:51:26 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms | Allocations: 2692)
+
+
+  
+NoMethodError (undefined method `<' for nil:NilClass):
+  
+app/controllers/events_controller.rb:7:in `index'
+Started GET "/events" for 127.0.0.1 at 2020-11-24 17:52:17 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 2626)
+
+
+  
+NoMethodError (undefined method `<' for nil:NilClass):
+  
+app/controllers/events_controller.rb:8:in `index'
+Started GET "/events" for 127.0.0.1 at 2020-11-24 17:52:32 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 30.7ms | Allocations: 1370)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 0.0ms | Allocations: 4096)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Index Events</h1>
+
+<h2>Past Events</h2>
+<div class=" row">
+  <!--<% Event.past.each do |event| %>-->
+  <% @events.each do |event| %>
+    <div class="col-sm-3 my-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title" >EVENT</h5>
+          <% unless event.title.nil? %>
+            <p class="card-title" ><%= event.title %></p>
+            <p class="card-title" ><%= event.datetime %></p>
+          <% else %>
+            <p class="card-text"> <%= event.description %></p>
+            <p class="card-title" ><%= event.datetime %></p>
+          <% end %>
+        </div>
+        <div class="card-footer">
+          <%= link_to "Show the event", event%>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<h2>Upcoming Events</h2>
+<div class=" row">
+  <!-- <% Event.future.each do |event| %>-->
+  <% @events.each do |event| %>
+    <div class="col-sm-3 my-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title" >EVENT</h5>
+     
+          <% unless event.title.nil? %>
+            <p class="card-title" ><%= event.title %></p>
+            <p class="card-title" ><%= event.datetime %></p>
+
+          <% else %>
+            <p class="card-text"> <%= event.description %></p>
+            <p class="card-title" ><%= event.datetime %></p>
+          <% end %>
+        </div>
+        <div class="card-footer">
+          <%= link_to "Show the event", event%>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+):
+1:    <h1>Index Events</h1>
+2:    
+3:    <h2>Past Events</h2>
+4:    <div class=" row">
+5:      <!--<% Event.past.each do |event| %>-->
+6:      <% @events.each do |event| %>
+7:        <div class="col-sm-3 my-3">
+8:          <div class="card">
+9:            <div class="card-body">
+10:              <h5 class="card-title" >EVENT</h5>
+11:              <% unless event.title.nil? %>
+12:                <p class="card-title" ><%= event.title %></p>
+13:                <p class="card-title" ><%= event.datetime %></p>
+14:              <% else %>
+15:                <p class="card-text"> <%= event.description %></p>
+16:                <p class="card-title" ><%= event.datetime %></p>
+17:              <% end %>
+18:            </div>
+19:            <div class="card-footer">
+20:              <%= link_to "Show the event", event%>
+21:            </div>
+22:          </div>
+23:        </div>
+24:      <% end %>
+25:    </div>
+26:    
+27:    <h2>Upcoming Events</h2>
+28:    <div class=" row">
+29:      <!-- <% Event.future.each do |event| %>-->
+30:      <% @events.each do |event| %>
+31:        <div class="col-sm-3 my-3">
+32:          <div class="card">
+33:            <div class="card-body">
+34:              <h5 class="card-title" >EVENT</h5>
+35:         
+36:              <% unless event.title.nil? %>
+37:                <p class="card-title" ><%= event.title %></p>
+38:                <p class="card-title" ><%= event.datetime %></p>
+39:    
+40:              <% else %>
+41:                <p class="card-text"> <%= event.description %></p>
+42:                <p class="card-title" ><%= event.datetime %></p>
+43:              <% end %>
+44:            </div>
+45:            <div class="card-footer">
+46:              <%= link_to "Show the event", event%>
+47:            </div>
+48:          </div>
+49:        </div>
+50:      <% end %>
+51:    </div>
+  
+app/views/events/index.html.erb:53: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:53: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:53: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:53: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:53: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:53: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/events" for 127.0.0.1 at 2020-11-24 17:53:06 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1313)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms | Allocations: 3460)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Index Events</h1>
+
+<h2>Past Events</h2>
+<div class=" row">
+  <!--<% Event.past.each do |event| %>-->
+  <% @events.each do |event| %>
+    <div class="col-sm-3 my-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title" >EVENT</h5>
+          <% unless event.title.nil? %>
+            <p class="card-title" ><%= event.title %></p>
+            <p class="card-title" ><%= event.datetime %></p>
+          <% else %>
+            <p class="card-text"> <%= event.description %></p>
+            <p class="card-title" ><%= event.datetime %></p>
+          <% end %>
+        </div>
+        <div class="card-footer">
+          <%= link_to "Show the event", event%>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<h2>Upcoming Events</h2>
+<div class=" row">
+  <!-- <% Event.future.each do |event| %>-->
+  <% @events.each do |event| %>
+    <div class="col-sm-3 my-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title" >EVENT</h5>
+     
+          <% unless event.title.nil? %>
+            <p class="card-title" ><%= event.title %></p>
+            <p class="card-title" ><%= event.datetime %></p>
+
+          <% else %>
+            <p class="card-text"> <%= event.description %></p>
+            <p class="card-title" ><%= event.datetime %></p>
+          <% end %>
+        </div>
+        <div class="card-footer">
+          <%= link_to "Show the event", event%>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+):
+1:    <h1>Index Events</h1>
+2:    
+3:    <h2>Past Events</h2>
+4:    <div class=" row">
+5:      <!--<% Event.past.each do |event| %>-->
+6:      <% @events.each do |event| %>
+7:        <div class="col-sm-3 my-3">
+8:          <div class="card">
+9:            <div class="card-body">
+10:              <h5 class="card-title" >EVENT</h5>
+11:              <% unless event.title.nil? %>
+12:                <p class="card-title" ><%= event.title %></p>
+13:                <p class="card-title" ><%= event.datetime %></p>
+14:              <% else %>
+15:                <p class="card-text"> <%= event.description %></p>
+16:                <p class="card-title" ><%= event.datetime %></p>
+17:              <% end %>
+18:            </div>
+19:            <div class="card-footer">
+20:              <%= link_to "Show the event", event%>
+21:            </div>
+22:          </div>
+23:        </div>
+24:      <% end %>
+25:    </div>
+26:    
+27:    <h2>Upcoming Events</h2>
+28:    <div class=" row">
+29:      <!-- <% Event.future.each do |event| %>-->
+30:      <% @events.each do |event| %>
+31:        <div class="col-sm-3 my-3">
+32:          <div class="card">
+33:            <div class="card-body">
+34:              <h5 class="card-title" >EVENT</h5>
+35:         
+36:              <% unless event.title.nil? %>
+37:                <p class="card-title" ><%= event.title %></p>
+38:                <p class="card-title" ><%= event.datetime %></p>
+39:    
+40:              <% else %>
+41:                <p class="card-text"> <%= event.description %></p>
+42:                <p class="card-title" ><%= event.datetime %></p>
+43:              <% end %>
+44:            </div>
+45:            <div class="card-footer">
+46:              <%= link_to "Show the event", event%>
+47:            </div>
+48:          </div>
+49:        </div>
+50:      <% end %>
+51:    </div>
+  
+app/views/events/index.html.erb:53: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:53: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:53: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:53: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:53: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/index.html.erb:53: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/events" for 127.0.0.1 at 2020-11-24 17:54:06 -0400
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:5
+  Rendered events/index.html.erb within layouts/application (Duration: 91.0ms | Allocations: 6548)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 109.9ms | Allocations: 9117)
+  Rendered layouts/_messages.html.erb (Duration: 1.1ms | Allocations: 178)
+Completed 200 OK in 356ms (Views: 342.2ms | ActiveRecord: 9.4ms | Allocations: 25106)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-11-24 17:55:31 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1323)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms | Allocations: 1969)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    2: 
+    3: <h2>Past Events</h2>
+    4: <div class=" row">
+    5:   <% @events.each do |event| %>
+    6:     <div class="col-sm-3 my-3">
+    7:       <div class="card">
+    8:         <div class="card-body">
+  
+app/views/events/index.html.erb:5
+Started GET "/events" for 127.0.0.1 at 2020-11-24 17:55:58 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1369)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 2015)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    2: 
+    3: <h2>Past Events</h2>
+    4: <div class=" row">
+    5:   <% @events.each do |event| %>
+    6:     <div class="col-sm-3 my-3">
+    7:       <div class="card">
+    8:         <div class="card-body">
+  
+app/views/events/index.html.erb:5
+Started GET "/events" for 127.0.0.1 at 2020-11-24 17:56:24 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:5
+  Rendered events/index.html.erb within layouts/application (Duration: 29.1ms | Allocations: 6127)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 27.0ms | Allocations: 6141)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 149ms (Views: 135.6ms | ActiveRecord: 4.9ms | Allocations: 21967)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-11-24 17:57:21 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:5
+  Rendered events/index.html.erb within layouts/application (Duration: 44.0ms | Allocations: 6080)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 29.9ms | Allocations: 6157)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 200ms (Views: 182.3ms | ActiveRecord: 5.1ms | Allocations: 21939)
+
+

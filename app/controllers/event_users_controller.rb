@@ -1,4 +1,5 @@
 class EventUsersController < ApplicationController
+  before_action :require_user
 
   def new
     @eventusers = EventUser.new

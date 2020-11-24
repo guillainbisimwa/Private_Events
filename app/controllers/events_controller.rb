@@ -3,7 +3,15 @@ class EventsController < ApplicationController
   before_action :require_user, except: [:index, :show]
   
   def index
-    @events = Event.all
+    unless params[:datetimeminus].nil? or params[:datetimeminus].nil?
+      if params[:datetimeminus] < DateTime.now
+        @events = Event.datetimeminus
+      elsif params[:datetimebigger] > DateTime.now
+        @events = Event.datetimebigger
+      end
+    else
+      @events = Event.all
+    end
   end
 
   def new
