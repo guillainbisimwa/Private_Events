@@ -11,8 +11,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
-    @event.creator = current_user.id
+    @event = current_user.created_events.build(event_params)
 
     if @event.save
       flash[:notice] = "#{@event.title} event has been created!"
@@ -29,6 +28,7 @@ class EventsController < ApplicationController
     else
       @event = Event.find(params[:id].to_i)
       @user = User.find(@event.creator)
+      @attendees_id = @event.attendees.all      
     end
   end
 

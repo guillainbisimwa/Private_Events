@@ -1,5 +1,7 @@
 <h1>Hello <%= @user.first_name.titlecase %> to show page</h1>
 
+<h2 class="my-5">Events <%= @user.first_name.titlecase %> has created</h2>
+
 <div class="card-group row">
   <% @user.created_events.each do |event| %>
   <div class="col-sm-3">
@@ -14,7 +16,30 @@
         <% end %>
       </div>
       <div class="card-footer">
-          <%= link_to "Show the event", event%>
+          <%= link_to "Show the event", event %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<h2 class="my-5">Events <%= @user.first_name.titlecase %> is attending </h2>
+
+<div class="card-group row">
+  <% @user.attended_event.each do |event| %>
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title" >MY EVENT</h5>
+
+        <% unless event.search_event(event.event_id).title.nil? %>
+          <h5 class="card-title" ><%= event.search_event(event.event_id).title %></h5>
+        <% else %>
+          <p class="card-text"> <%= event.search_event(event.event_id).description %></p>
+        <% end %>
+      </div>
+      <div class="card-footer">
+          <%= link_to "Show the event", event.search_event(event.event_id) %>
       </div>
     </div>
   </div>

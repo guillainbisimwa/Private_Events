@@ -19,9 +19,32 @@
        <small>-by <%= @user.first_name %> </small>
     </p>
      <%= link_to "Go Back", events_path ,  class: "btn btn-info" %>
-   
+     <%= link_to "Assist this event", assist_path(@event) ,  class: "btn btn-info",  method: :post %>
   </div>
   <div class="card-footer text-muted">
     2 days ago
   </div>
 </div>
+
+<h3 class="mt-5 mb-5 text-center">Attendees</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @attendees_id.each do |user| %>
+    <tr>
+      <th scope="row">1</th>
+      <td><%= user.search_user(user.user_id).first_name %></td>
+      <td><%= user.search_user(user.user_id).last_name %></td>
+      <td><%= user.search_user(user.user_id).email %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
