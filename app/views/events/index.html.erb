@@ -1,9 +1,18 @@
 <h1>Index Events</h1>
+<div class="card-group row">
+  <% @events.each do |event| %>
+  <div class="col-sm-3">
+  <div class="card">
+  <div class="card-body">
+      <h5 class="card-title" >EVENT</h5>
 
-<% @events.each do |event| %>
-  <% unless event.title.nil? %>
-    <p>Event's Title is: <%= event.title %></p>
-  <% else %>
-    <p>Event's Description is: <%= event.description %></p>
+    <% unless event.title.nil? %>
+      <h5 class="card-title" ><%= event.title %></h5>
+    <% else %>
+      <p class="card-text"> <%= event.description %></p>
+    <% end %>
+  </div>
+  </div>
+  </div>
   <% end %>
-<% end %>
+</div>
