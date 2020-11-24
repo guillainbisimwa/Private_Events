@@ -42,7 +42,7 @@
   <tbody>
   <% @attendees_id.each do |user| %>
     <tr>
-      <th scope="row">1</th>
+      <th scope="row"><%= user.id %></th>
       <td><%= user.search_user(user.user_id).first_name %></td>
       <td><%= user.search_user(user.user_id).last_name %></td>
       <td><%= user.search_user(user.user_id).email %></td>
