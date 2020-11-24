@@ -10,7 +10,7 @@
           <li class="nav-item active">
               <%= link_to "Your profile", users_path(current_user),  class: "nav-link" %>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item ">
               <%= link_to "Create an event", new_event_path,  class: "nav-link" %>
           </li>
         <% end %>
@@ -29,13 +29,14 @@
             </div>
           </li>
       </ul>
+      <div class="form-inline my-2 my-lg-0">
       <% if logged_in? %>
-        <form class="form-inline my-2 my-lg-0">
           <%= link_to "Log out", logout_path,  class: "btn btn-danger my-2 my-sm-0 ", method: :delete %>  
       <% else %>
           <%= link_to "Log in", login_path,  class: "btn btn-primary my-2 my-sm-0 ml-4" %>
           <%= link_to "Sign up", new_users_path,  class: "btn btn-primary my-2 my-sm-0 ml-4" %>
-        </form>
       <% end %>
+      </div>
+
   </div>
 </nav>
