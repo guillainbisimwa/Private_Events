@@ -1,10 +1,27 @@
 <h1>Show Event</h1>
 
-<p> The Event's title is: 
-<% if !@event.title.nil? %>
-  <%= @event.title %>
-<% else %>
-  <%= @event.description %>
-<% end %>
-
-<p> The creator of this Event is: <%= @user.first_name %>
+<div class="card text-center mt-5">
+  <div class="card-header">
+    Show Event
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">
+    <% if !@event.title.nil? %>
+      <%= @event.title %>
+    <% else %>
+      Event
+    <% end%>
+    </h5>
+    <p class="card-text">
+       <%= @event.description %>
+    </p>
+    <p class="card-text">
+       <small>-by <%= @user.first_name %> </small>
+    </p>
+     <%= link_to "Go Back", events_path ,  class: "btn btn-info" %>
+   
+  </div>
+  <div class="card-footer text-muted">
+    2 days ago
+  </div>
+</div>
