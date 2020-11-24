@@ -4,7 +4,7 @@
 
 <div class="card-group row">
   <% @user.created_events.each do |event| %>
-  <div class="col-sm-3">
+  <div class="col-sm-3 my-3">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title" >MY EVENT</h5>
@@ -23,25 +23,55 @@
   <% end %>
 </div>
 
-<h2 class="my-5">Events <%= @user.first_name.titlecase %> is attending </h2>
+<h2 class="my-5">Upcoming events</h2>
 
 <div class="card-group row">
   <% @user.attended_event.each do |event| %>
-  <div class="col-sm-3">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title" >MY EVENT</h5>
+    <% if event.search_event(event.event_id).datetime > DateTime.now %>
+    <div class="col-sm-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title" >MY EVENT</h5>
 
-        <% unless event.search_event(event.event_id).title.nil? %>
-          <h5 class="card-title" ><%= event.search_event(event.event_id).title %></h5>
-        <% else %>
-          <p class="card-text"> <%= event.search_event(event.event_id).description %></p>
-        <% end %>
-      </div>
-      <div class="card-footer">
-          <%= link_to "Show the event", event.search_event(event.event_id) %>
+          <% unless event.search_event(event.event_id).title.nil? %>
+            <h5 class="card-title" ><%= event.search_event(event.event_id).title %></h5>
+          <% else %>
+            <p class="card-text"> 
+            <%= event.search_event(event.event_id).description %></p>
+          <% end %>
+        </div>
+        <div class="card-footer">
+            <%= link_to "Show the event", event.search_event(event.event_id) %>
+        </div>
       </div>
     </div>
-  </div>
+    <% end %>
+  <% end %>
+</div>
+
+
+<h2 class="my-5">Previously attended events”</h2>
+
+<div class="card-group row">
+  <% @user.attended_event.each do |event| %>
+    <% if event.search_event(event.event_id).datetime <= DateTime.now %>
+    <div class="col-sm-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title" >MY EVENT</h5>
+
+          <% unless event.search_event(event.event_id).title.nil? %>
+            <h5 class="card-title" ><%= event.search_event(event.event_id).title %></h5>
+          <% else %>
+            <p class="card-text"> 
+            <%= event.search_event(event.event_id).description %></p>
+          <% end %>
+        </div>
+        <div class="card-footer">
+            <%= link_to "Show the event", event.search_event(event.event_id) %>
+        </div>
+      </div>
+    </div>
+    <% end %>
   <% end %>
 </div>

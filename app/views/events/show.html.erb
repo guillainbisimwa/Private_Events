@@ -19,7 +19,9 @@
        <small>-by <%= @user.first_name %> </small>
     </p>
      <%= link_to "Go Back", events_path ,  class: "btn btn-info" %>
-     <%= link_to "Assist this event", assist_path(@event) ,  class: "btn btn-info",  method: :post %>
+     <% if logged_in? %>
+      <%= link_to "Assist this event", assist_path(@event) ,  class: "btn btn-warning",  method: :post %>
+     <% end %>
   </div>
   <div class="card-footer text-muted">
     2 days ago

@@ -1,8 +1,13 @@
 <%= form_with model: @event, method: :post do |form| %>
   
-  <ul class="mt-5">
-    <h2>Description of your new Event! </h2>
-    <%= form.text_area :description, rows: 10, cols: 100, placeholder: "Event description here"%>
+  <ul class="mt-5 form-group">
+    <label><h2>Description of your new Event! </h2></label>
+    <%= form.text_area :description, rows: 10, class: "form-control", cols: 100, placeholder: "Event description here" %>
+  </ul>
+
+  <ul class="mt-5 form-group">
+    <label>Date</label>
+    <%= form.date_field :datetime, class: "form-control", placeholder: "Event date here", :value => Time.now.strftime('%Y-%m-%d') %>
   </ul>
   
   <ul>
