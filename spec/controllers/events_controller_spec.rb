@@ -56,6 +56,4 @@ RSpec.describe EventsController do
       expect(subject).to redirect_to('controller' => 'sessions', 'action' => 'new')
     end
   end
-
-
 end

@@ -22799,3 +22799,1165 @@ FOREIGN KEY ("creator_id")
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mActiveRecord::InternalMetadata Create (2.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "36ca2d97caab978bb10c01bfe9e1feaae49b1802"], ["created_at", "2020-11-25 20:24:54.310534"], ["updated_at", "2020-11-25 20:24:54.310534"]]
   [1m[35m (103.1ms)[0m  [1m[36mcommit transaction[0m
+Started DELETE "/logout" for 127.0.0.1 at 2020-11-25 16:30:34 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KStx+ZhoDBNacAbRB4KLMVbX1vmEjuzGwqEzlghKPBy68Q3XiKecpvf0VgANT+Sh0q7+f1T0h0hBvgyfDeFE2w=="}
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 20ms (ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-25 16:30:35 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 87)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 142)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 136ms (Views: 134.7ms | ActiveRecord: 0.0ms | Allocations: 8358)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-11-25 16:30:37 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 707)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 7.8ms | Allocations: 144)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 226ms (Views: 220.4ms | ActiveRecord: 0.0ms | Allocations: 9004)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:30:41 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"40vehAfv+GIIml6/wJuM1SdMTAYQMlku2l3igS8XL/hKKpnWtKvD7M2vOFTGXkQVBVOUaRS8tkeqO3TqybuXag==", "session"=>{"first_name"=>"john", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "john"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 695)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 140)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 208ms (Views: 126.1ms | ActiveRecord: 0.9ms | Allocations: 12673)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:30:44 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"40vehAfv+GIIml6/wJuM1SdMTAYQMlku2l3igS8XL/hKKpnWtKvD7M2vOFTGXkQVBVOUaRS8tkeqO3TqybuXag==", "session"=>{"first_name"=>"john", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "john"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 695)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 140)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 142ms (Views: 123.2ms | ActiveRecord: 0.6ms | Allocations: 9944)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:30:48 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"40vehAfv+GIIml6/wJuM1SdMTAYQMlku2l3igS8XL/hKKpnWtKvD7M2vOFTGXkQVBVOUaRS8tkeqO3TqybuXag==", "session"=>{"first_name"=>"joseph", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "joseph"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:3000/users.1
+Completed 200 OK in 50ms (ActiveRecord: 0.6ms | Allocations: 4798)
+
+
+Started GET "/users.1" for 127.0.0.1 at 2020-11-25 16:30:48 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (Duration: 128.0ms | Allocations: 10699)
+Completed 500 Internal Server Error in 137ms (ActiveRecord: 0.9ms | Allocations: 12498)
+
+
+  
+ActionView::Template::Error (undefined method `attended_event' for #<User:0x000000000dadad88>
+Did you mean?  attended_events
+               attended_events=
+               attended_event_ids):
+    28: <h2 class="my-5">Upcoming events</h2>
+    29: 
+    30: <div class="card-group row">
+    31:   <% @user.attended_event.each do |event| %>
+    32:     <% unless event.search_event(event.event_id).datetime.nil? %>
+    33:       <% if event.search_event(event.event_id).datetime > DateTime.now %>
+    34:         <div class="col-sm-3">
+  
+app/views/users/show.html.erb:31
+Started GET "/users.1" for 127.0.0.1 at 2020-11-25 16:34:15 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 1]]
+  ↳ app/views/users/show.html.erb:6
+  Rendered users/show.html.erb within layouts/application (Duration: 71.5ms | Allocations: 11497)
+Completed 500 Internal Server Error in 140ms (ActiveRecord: 6.7ms | Allocations: 19668)
+
+
+  
+ActionView::Template::Error (undefined method `attended_event' for #<User:0x000000000e779c60>
+Did you mean?  attended_events
+               attended_events=
+               attended_event_ids):
+    28: <h2 class="my-5">Upcoming events</h2>
+    29: 
+    30: <div class="card-group row">
+    31:   <% @user.attended_event.each do |event| %>
+    32:     <% unless event.search_event(event.event_id).datetime.nil? %>
+    33:       <% if event.search_event(event.event_id).datetime > DateTime.now %>
+    34:         <div class="col-sm-3">
+  
+app/views/users/show.html.erb:31
+Started GET "/users.1" for 127.0.0.1 at 2020-11-25 16:34:39 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mEventUser Load (0.5ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  Rendered users/show.html.erb within layouts/application (Duration: 383.6ms | Allocations: 10649)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 4.4ms | Allocations: 638)
+  Rendered layouts/_messages.html.erb (Duration: 1.3ms | Allocations: 182)
+Completed 200 OK in 652ms (Views: 498.0ms | ActiveRecord: 11.6ms | Allocations: 21796)
+
+
+Started GET "/users.1" for 127.0.0.1 at 2020-11-25 16:34:56 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mEventUser Load (0.4ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  Rendered users/show.html.erb within layouts/application (Duration: 378.9ms | Allocations: 6540)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 2.2ms | Allocations: 637)
+  Rendered layouts/_messages.html.erb (Duration: 1.0ms | Allocations: 178)
+Completed 200 OK in 603ms (Views: 523.0ms | ActiveRecord: 1.8ms | Allocations: 17718)
+
+
+Started GET "/users.1" for 127.0.0.1 at 2020-11-25 16:34:58 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mEventUser Load (0.5ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mEvent Load (3.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  Rendered users/show.html.erb within layouts/application (Duration: 272.8ms | Allocations: 5818)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 268)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 488ms (Views: 427.3ms | ActiveRecord: 4.8ms | Allocations: 15129)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2020-11-25 16:35:02 -0400
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 382.6ms | Allocations: 782)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 269)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 565ms (Views: 539.2ms | ActiveRecord: 0.4ms | Allocations: 10417)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-11-25 16:35:04 -0400
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime < '2020-11-25 20:35:04.699400')[0m
+  ↳ app/views/events/index.html.erb:5
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime > '2020-11-25 20:35:04.720243')[0m
+  ↳ app/views/events/index.html.erb:28
+  Rendered events/index.html.erb within layouts/application (Duration: 58.1ms | Allocations: 1887)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 3.3ms | Allocations: 842)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 164ms (Views: 152.9ms | ActiveRecord: 2.3ms | Allocations: 10896)
+
+
+Started GET "/users.1" for 127.0.0.1 at 2020-11-25 16:35:09 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mEventUser Load (0.3ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  Rendered users/show.html.erb within layouts/application (Duration: 177.2ms | Allocations: 5816)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 268)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 300ms (Views: 268.2ms | ActiveRecord: 3.4ms | Allocations: 15110)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2020-11-25 16:35:11 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:25:in `show'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:28:in `show'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:29:in `show'
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mEventUser Load (1.2ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."event_id" = ?[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:43
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:6:in `search_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:6:in `search_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:6:in `search_user'
+  Rendered events/show.html.erb within layouts/application (Duration: 52.2ms | Allocations: 3341)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 265)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 244ms (Views: 169.3ms | ActiveRecord: 2.1ms | Allocations: 13867)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2020-11-25 16:35:16 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"grDpa3a1n60XHvAPzNeQfoaxhwSwv/nJdZ9n/Whs7C4RapVFZnoPGLqaoN7GGv/uAsivgmDFkkf2gFj0bceU6Q=="}
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 331)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-25 16:35:16 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.6ms | Allocations: 273)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 142)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 111ms (Views: 107.0ms | ActiveRecord: 0.0ms | Allocations: 8941)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-11-25 16:35:24 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1032)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 144)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 141ms (Views: 127.6ms | ActiveRecord: 0.0ms | Allocations: 9743)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:35:26 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"miM8HFJMgFL1ZhgbKeRPJ95BeGYrsHQ63mRkBa0yt9gzQntO4Qi73DBTfvAvIYfn/F6gCS8+m1OuAvJuS54PSg==", "session"=>{"first_name"=>"john", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "john"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.9ms | Allocations: 2333)
+
+
+  
+NoMethodError (undefined method `first_name' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:10:in `create'
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:35:31 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"miM8HFJMgFL1ZhgbKeRPJ95BeGYrsHQ63mRkBa0yt9gzQntO4Qi73DBTfvAvIYfn/F6gCS8+m1OuAvJuS54PSg==", "session"=>{"first_name"=>"john", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "john"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.7ms | Allocations: 2203)
+
+
+  
+NoMethodError (undefined method `first_name' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:10:in `create'
+Started GET "/login" for 127.0.0.1 at 2020-11-25 16:35:41 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 707)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 145)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 115ms (Views: 112.9ms | ActiveRecord: 0.0ms | Allocations: 8973)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:35:46 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"Rud+STvnH9/jfUsThekAYt4tZyYJDdFcAQRebqBbvkTVPQJnKyiPak75G8KPJG/yWlRPoNl3utKCG2FnpfDGgw==", "session"=>{"first_name"=>"john", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "john"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 1.5ms | Allocations: 4606)
+
+
+  
+NoMethodError (undefined method `first_name' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:10:in `create'
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:35:48 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"Rud+STvnH9/jfUsThekAYt4tZyYJDdFcAQRebqBbvkTVPQJnKyiPak75G8KPJG/yWlRPoNl3utKCG2FnpfDGgw==", "session"=>{"first_name"=>"john", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "john"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.6ms | Allocations: 2180)
+
+
+  
+NoMethodError (undefined method `first_name' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:10:in `create'
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:36:02 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"Rud+STvnH9/jfUsThekAYt4tZyYJDdFcAQRebqBbvkTVPQJnKyiPak75G8KPJG/yWlRPoNl3utKCG2FnpfDGgw==", "session"=>{"first_name"=>"john", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (10.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "john"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 10.5ms | Allocations: 2181)
+
+
+  
+NoMethodError (undefined method `first_name' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:10:in `create'
+Started GET "/login" for 127.0.0.1 at 2020-11-25 16:36:49 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 707)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 145)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 169ms (Views: 166.1ms | ActiveRecord: 0.0ms | Allocations: 8977)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:36:54 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"0prsgn89AXLpq/T29819t3DOWzZm1XBHaCemZtaMBUlBQJCsb/KRx0QvpCf9ABIn9LdzsLavG8nrOJlv0yd9jg==", "session"=>{"first_name"=>"john", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "john"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 695)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 140)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 131ms (Views: 75.1ms | ActiveRecord: 2.5ms | Allocations: 12793)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:36:56 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"0prsgn89AXLpq/T29819t3DOWzZm1XBHaCemZtaMBUlBQJCsb/KRx0QvpCf9ABIn9LdzsLavG8nrOJlv0yd9jg==", "session"=>{"first_name"=>"john", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "john"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 695)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 140)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 133ms (Views: 111.5ms | ActiveRecord: 3.5ms | Allocations: 9923)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:37:06 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"0prsgn89AXLpq/T29819t3DOWzZm1XBHaCemZtaMBUlBQJCsb/KRx0QvpCf9ABIn9LdzsLavG8nrOJlv0yd9jg==", "session"=>{"first_name"=>"john", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "john"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 695)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 140)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 174ms (Views: 122.7ms | ActiveRecord: 0.9ms | Allocations: 9923)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-11-25 16:38:58 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 8.4ms | Allocations: 707)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 145)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 110ms (Views: 107.8ms | ActiveRecord: 0.0ms | Allocations: 8963)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:39:01 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"fzCf5cEUATf2lJqlXUCEOKbLcapwKe7xuE9xZ91AjPzs6uPL0duRglsQynRXjeuoIrJZLKBThX87UE5u2Ov0Ow==", "session"=>{"first_name"=>"rgd", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "rgd"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 6.8ms | Allocations: 4600)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:10:in `create'
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:39:03 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"fzCf5cEUATf2lJqlXUCEOKbLcapwKe7xuE9xZ91AjPzs6uPL0duRglsQynRXjeuoIrJZLKBThX87UE5u2Ov0Ow==", "session"=>{"first_name"=>"rgd", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "rgd"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 0.9ms | Allocations: 2172)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:10:in `create'
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:39:04 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"fzCf5cEUATf2lJqlXUCEOKbLcapwKe7xuE9xZ91AjPzs6uPL0duRglsQynRXjeuoIrJZLKBThX87UE5u2Ov0Ow==", "session"=>{"first_name"=>"rgd", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "rgd"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.7ms | Allocations: 2172)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:10:in `create'
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:39:05 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"fzCf5cEUATf2lJqlXUCEOKbLcapwKe7xuE9xZ91AjPzs6uPL0duRglsQynRXjeuoIrJZLKBThX87UE5u2Ov0Ow==", "session"=>{"first_name"=>"rgd", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "rgd"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 1.0ms | Allocations: 2172)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:10:in `create'
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:39:06 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"fzCf5cEUATf2lJqlXUCEOKbLcapwKe7xuE9xZ91AjPzs6uPL0duRglsQynRXjeuoIrJZLKBThX87UE5u2Ov0Ow==", "session"=>{"first_name"=>"rgd", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "rgd"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.9ms | Allocations: 2173)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:10:in `create'
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:39:06 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"fzCf5cEUATf2lJqlXUCEOKbLcapwKe7xuE9xZ91AjPzs6uPL0duRglsQynRXjeuoIrJZLKBThX87UE5u2Ov0Ow==", "session"=>{"first_name"=>"rgd", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "rgd"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.8ms | Allocations: 2170)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:10:in `create'
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:39:06 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"fzCf5cEUATf2lJqlXUCEOKbLcapwKe7xuE9xZ91AjPzs6uPL0duRglsQynRXjeuoIrJZLKBThX87UE5u2Ov0Ow==", "session"=>{"first_name"=>"rgd", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "rgd"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.5ms | Allocations: 2170)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:10:in `create'
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:39:22 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"fzCf5cEUATf2lJqlXUCEOKbLcapwKe7xuE9xZ91AjPzs6uPL0duRglsQynRXjeuoIrJZLKBThX87UE5u2Ov0Ow==", "session"=>{"first_name"=>"rgd", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "rgd"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 58563ms (ActiveRecord: 2.8ms | Allocations: 110663)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:11:in `create'
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:40:24 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"fzCf5cEUATf2lJqlXUCEOKbLcapwKe7xuE9xZ91AjPzs6uPL0duRglsQynRXjeuoIrJZLKBThX87UE5u2Ov0Ow==", "session"=>{"first_name"=>"rgd", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "rgd"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 1.9ms | Allocations: 4556)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:10:in `create'
+Started GET "/login" for 127.0.0.1 at 2020-11-25 16:40:55 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 707)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 145)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 83ms (Views: 82.3ms | ActiveRecord: 0.0ms | Allocations: 8971)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:40:59 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"N2vFOMtdniTIk8h08euRreHMRpHxM3rdaYAnvLOIdNyksbkW25IOkWUXmKX7Jv49ZbVuFyFJEVPqnxi1tiMMGw==", "session"=>{"first_name"=>"asasas", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "asasas"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 695)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 140)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 18190ms (Views: 76.0ms | ActiveRecord: 6.3ms | Allocations: 37630)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:41:53 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"N2vFOMtdniTIk8h08euRreHMRpHxM3rdaYAnvLOIdNyksbkW25IOkWUXmKX7Jv49ZbVuFyFJEVPqnxi1tiMMGw==", "session"=>{"first_name"=>"asasas", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "asasas"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 709)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 2.6ms | Allocations: 140)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 22802ms (Views: 84.6ms | ActiveRecord: 1.1ms | Allocations: 35404)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-11-25 16:42:31 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 699)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 140)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 137ms (Views: 134.9ms | ActiveRecord: 0.0ms | Allocations: 8847)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-11-25 16:44:59 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 707)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 145)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 120ms (Views: 119.1ms | ActiveRecord: 0.0ms | Allocations: 8965)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:45:01 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"cv7Q5QopwL8okTkG860HmQD/wVOfZJFNYocZ4+o8oFLhJKzLGuZQCoUVadf5YGgJhIbp1U8e+sPhmCbq75fYlQ==", "session"=>{"first_name"=>"asasas", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "asasas"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 695)
+Started GET "/login" for 127.0.0.1 at 2020-11-25 16:47:11 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 699)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 140)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 130285ms (Views: 194.8ms | ActiveRecord: 2.2ms | Allocations: 101835)
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 140)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 131ms (Views: 129.3ms | ActiveRecord: 0.0ms | Allocations: 14974)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:47:16 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"Va6bOFK9qqvVt2/Rb7nODWm8iFjm8S+f87USvFcnHVnGdOcWQnI6HngzPwBldKGd7cWg3jaLRBFwqi21Uoxlng==", "session"=>{"first_name"=>"asasas", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "asasas"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 703)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 145)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 11)
+Completed 200 OK in 10834ms (Views: 69.7ms | ActiveRecord: 7.7ms | Allocations: 27687)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-11-25 16:48:50 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 707)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 145)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 107ms (Views: 105.9ms | ActiveRecord: 0.0ms | Allocations: 8979)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:48:53 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"HTMdNbPKo9+X8SZyXRcLjc05fmfnEXFIR8mN9OIluxOO6WEbowUzajp1dqNX2mQdSUBW4TdrGsbE1rL9547D1A==", "session"=>{"first_name"=>"asasas", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "asasas"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 348ms (ActiveRecord: 2.0ms | Allocations: 88132)
+
+
+  
+NameError (undefined local variable or method `new_user_path' for #<SessionsController:0x000000000e4b6bb8>
+Did you mean?  new_users_path
+               new_event_path):
+  
+app/controllers/sessions_controller.rb:10:in `create'
+Started GET "/login" for 127.0.0.1 at 2020-11-25 16:49:02 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 707)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 145)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 116ms (Views: 115.7ms | ActiveRecord: 0.0ms | Allocations: 8995)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:49:04 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"arC5fFqyTfg71LarxstwRwEpQkIpbW6iL95A+Xihe2/5asVSSn3dTZZQ5nrMBh/XhVBqxPkXBSyswX/wfQoDqA==", "session"=>{"first_name"=>"asasasa", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "asasasa"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://127.0.0.1:3000/users/new
+Completed 200 OK in 40ms (ActiveRecord: 1.7ms | Allocations: 3882)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-11-25 16:49:04 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 74.2ms | Allocations: 1544)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 146)
+  Rendered layouts/_messages.html.erb (Duration: 0.7ms | Allocations: 22)
+Completed 200 OK in 200ms (Views: 167.8ms | ActiveRecord: 2.0ms | Allocations: 13491)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-11-25 16:49:09 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 16.3ms | Allocations: 706)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 144)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 235ms (Views: 230.3ms | ActiveRecord: 0.0ms | Allocations: 8859)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:49:18 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"0G5AxQ0nqsGPBVlI0V78Yk1/ozdihhavKWpGZd3EAQt5DweXvmORT0owP6PXmzSib2B7WGYI+cZZDNAOO2i5mQ==", "session"=>{"first_name"=>"asasas", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "asasas"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://127.0.0.1:3000/login
+Completed 200 OK in 28ms (ActiveRecord: 1.7ms | Allocations: 3909)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-11-25 16:49:18 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 706)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 145)
+  Rendered layouts/_messages.html.erb (Duration: 0.4ms | Allocations: 22)
+Completed 200 OK in 118ms (Views: 116.0ms | ActiveRecord: 0.0ms | Allocations: 9041)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:49:24 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"6dWTAspj+XWFOuvsULMi4wqnyGJleDaSAKoTP4Jv3XJAtNRQeSfC+0APjQdWduojKLgQDWH22ftwzIVUZMNl4A==", "session"=>{"first_name"=>"k,k,k", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "k,k,k"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://127.0.0.1:3000/login
+Completed 200 OK in 40ms (ActiveRecord: 0.7ms | Allocations: 1491)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-11-25 16:49:24 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 8.4ms | Allocations: 699)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 140)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 22)
+Completed 200 OK in 121ms (Views: 120.1ms | ActiveRecord: 0.0ms | Allocations: 8871)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:49:31 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"tEp9i9dU/AmcxZn2iJTNlJ3/NMaiRtGhWwXRDHhHfogdKzrZZBDHh1nw/x2OUQVUv+DsqabIPsgrY0dnnuvGGg==", "session"=>{"first_name"=>"joseph", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "joseph"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://127.0.0.1:3000/users.1
+Completed 200 OK in 80ms (ActiveRecord: 10.8ms | Allocations: 4951)
+
+
+Started GET "/users.1" for 127.0.0.1 at 2020-11-25 16:49:31 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mEventUser Load (0.5ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  Rendered users/show.html.erb within layouts/application (Duration: 227.6ms | Allocations: 16555)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 269)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 21)
+Completed 200 OK in 334ms (Views: 308.1ms | ActiveRecord: 7.7ms | Allocations: 26111)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2020-11-25 16:49:36 -0400
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 360)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 269)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 115ms (Views: 103.1ms | ActiveRecord: 0.4ms | Allocations: 9400)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-11-25 16:49:37 -0400
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime < '2020-11-25 20:49:37.120068')[0m
+  ↳ app/views/events/index.html.erb:5
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime > '2020-11-25 20:49:37.144960')[0m
+  ↳ app/views/events/index.html.erb:28
+  Rendered events/index.html.erb within layouts/application (Duration: 43.0ms | Allocations: 1435)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 23.8ms | Allocations: 835)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 288ms (Views: 284.7ms | ActiveRecord: 1.5ms | Allocations: 10282)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2020-11-25 16:49:38 -0400
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 350)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 262)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 174ms (Views: 122.1ms | ActiveRecord: 0.4ms | Allocations: 9176)
+
+
+Started POST "/events" for 127.0.0.1 at 2020-11-25 16:49:58 -0400
+Processing by EventsController#create as JS
+  Parameters: {"authenticity_token"=>"FrusQW6LNDQc0j5ghhXFRXrVJlVl/gGLDNrA3qeTi5/vmGuntNCQ7Oq3uq8650zRoGj0ZlWCPaWWHa2gyQMQWQ==", "event"=>{"description"=>"So I decided to build a tagging system in my RoR blog. After following the Getting Started Official rails guide, im following up with one from jumpstartlabs http://tutorials.jumpstartlab.com/projects/blogger.html#i3:-tagging Where I'm basically using the 'join table' method to map the Many Posts Have Many Tags and Many Tags Have Many Posts relationship", "datetime"=>"2020-11-23"}, "commit"=>"Create an event"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:15:in `create'
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:15:in `create'
+  [1m[36mEvent Create (9.6ms)[0m  [1m[32mINSERT INTO "events" ("datetime", "created_at", "updated_at", "creator", "description") VALUES (?, ?, ?, ?, ?)[0m  [["datetime", "2020-11-23"], ["created_at", "2020-11-25 20:49:58.258826"], ["updated_at", "2020-11-25 20:49:58.258826"], ["creator", 1], ["description", "So I decided to build a tagging system in my RoR blog. After following the Getting Started Official rails guide, im following up with one from jumpstartlabs http://tutorials.jumpstartlab.com/projects/blogger.html#i3:-tagging Where I'm basically using the 'join table' method to map the Many Posts Have Many Tags and Many Tags Have Many Posts relationship"]]
+  ↳ app/controllers/events_controller.rb:15:in `create'
+  [1m[35m (89.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:15:in `create'
+Redirected to http://127.0.0.1:3000/events
+Completed 200 OK in 327ms (ActiveRecord: 100.4ms | Allocations: 6342)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-11-25 16:49:58 -0400
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime < '2020-11-25 20:49:58.587818')[0m
+  ↳ app/views/events/index.html.erb:5
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime > '2020-11-25 20:49:58.616074')[0m
+  ↳ app/views/events/index.html.erb:28
+  Rendered events/index.html.erb within layouts/application (Duration: 34.2ms | Allocations: 1480)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 27.6ms | Allocations: 835)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 22)
+Completed 200 OK in 346ms (Views: 342.7ms | ActiveRecord: 1.5ms | Allocations: 10362)
+
+
+Started GET "/users.1" for 127.0.0.1 at 2020-11-25 16:50:06 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mEventUser Load (0.6ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  Rendered users/show.html.erb within layouts/application (Duration: 186.7ms | Allocations: 5861)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 261)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 359ms (Views: 318.2ms | ActiveRecord: 2.0ms | Allocations: 15156)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-25 16:50:14 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Redirected to http://127.0.0.1:3000/events
+Completed 302 Found in 24ms (ActiveRecord: 0.3ms | Allocations: 823)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-11-25 16:50:14 -0400
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime < '2020-11-25 20:50:14.334166')[0m
+  ↳ app/views/events/index.html.erb:5
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime > '2020-11-25 20:50:14.345202')[0m
+  ↳ app/views/events/index.html.erb:28
+  Rendered events/index.html.erb within layouts/application (Duration: 31.3ms | Allocations: 1482)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 16.4ms | Allocations: 835)
+  Rendered layouts/_messages.html.erb (Duration: 1.6ms | Allocations: 17)
+Completed 200 OK in 147ms (Views: 144.3ms | ActiveRecord: 1.9ms | Allocations: 10343)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2020-11-25 16:50:15 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"he+NwVKAE3BizoXZhick8I5qGB5yIFbS25whW4wBu4IWNfHvQk+Dxc9K1QiM6ktgChMwmKJaPVxYgx5SiarDRQ=="}
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 341)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-25 16:50:15 -0400
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.5ms | Allocations: 84)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 142)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 165ms (Views: 163.9ms | ActiveRecord: 0.0ms | Allocations: 8392)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-11-25 16:50:17 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 699)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 4.6ms | Allocations: 140)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 90ms (Views: 88.5ms | ActiveRecord: 0.0ms | Allocations: 8835)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-25 16:50:20 -0400
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"x0BwcOInFvWTkgnEbLffXfGBlE+cmgYmYLxK3sMqqOVuITciUWMte1anby9qched055MIJgU6U8Q2ty1JYYQdw==", "session"=>{"first_name"=>"hgfhgh", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "hgfhgh"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://127.0.0.1:3000/login
+Completed 200 OK in 57ms (ActiveRecord: 0.9ms | Allocations: 1480)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-11-25 16:50:20 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 699)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 140)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 22)
+Completed 200 OK in 113ms (Views: 107.3ms | ActiveRecord: 0.0ms | Allocations: 8869)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-11-25 17:19:48 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"scbeKoX0j/j0VaJSz9DokmhHtrxvUZsy5xgmHQRp7/gYp5l4NrC0djFgxLnJFSBSSlhu02vfdFuXfrB24sVXag==", "session"=>{"first_name"=>"joseph", "number_field"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login user"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."first_name" = ? LIMIT ?[0m  [["first_name", "joseph"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://127.0.0.1:3000/users.1
+Completed 200 OK in 106ms (ActiveRecord: 1.2ms | Allocations: 7018)
+
+
+Started GET "/users.1" for 127.0.0.1 at 2020-11-25 17:19:48 -0400
+Processing by UsersController#show as 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 1]]
+  ↳ app/views/users/show.html.erb:6
+  [1m[36mEventUser Load (0.4ms)[0m  [1m[34mSELECT "event_users".* FROM "event_users" WHERE "event_users"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:31
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/event_user.rb:10:in `search_event'
+  Rendered users/show.html.erb within layouts/application (Duration: 383.4ms | Allocations: 16677)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 2.3ms | Allocations: 638)
+  Rendered layouts/_messages.html.erb (Duration: 1.0ms | Allocations: 182)
+Completed 200 OK in 566ms (Views: 505.1ms | ActiveRecord: 3.2ms | Allocations: 27981)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2020-11-25 17:19:54 -0400
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 50.4ms | Allocations: 549)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 269)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 185ms (Views: 148.0ms | ActiveRecord: 0.6ms | Allocations: 10233)
+
+
+Started POST "/events" for 127.0.0.1 at 2020-11-25 17:23:21 -0400
+Processing by EventsController#create as JS
+  Parameters: {"authenticity_token"=>"Pfb/Clzg4EBkufmrTA0s6G5vb8mpQw28HlTyBIo+k0/E1TjshrtEmJLcfWTw/6V8tNK9+pk/MZKEk5965K4IiQ==", "event"=>{"description"=>"Active Record is much more powerful than just simple CRUD actions on individual records. It gives you a Ruby-ish interface to do almost anything you can do with bare-metal SQL statements. You can cherry-pick individual groups of records based on specific criteria and order them however you want. You can join tables manually or query using associations set up by Rails. You can return lists of records or perform basic math like counts and averages.", "datetime"=>"2020-11-25"}, "commit"=>"Create an event"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:15:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:15:in `create'
+  [1m[36mEvent Create (34.9ms)[0m  [1m[32mINSERT INTO "events" ("datetime", "created_at", "updated_at", "creator", "description") VALUES (?, ?, ?, ?, ?)[0m  [["datetime", "2020-11-25"], ["created_at", "2020-11-25 21:23:21.872852"], ["updated_at", "2020-11-25 21:23:21.872852"], ["creator", 1], ["description", "Active Record is much more powerful than just simple CRUD actions on individual records. It gives you a Ruby-ish interface to do almost anything you can do with bare-metal SQL statements. You can cherry-pick individual groups of records based on specific criteria and order them however you want. You can join tables manually or query using associations set up by Rails. You can return lists of records or perform basic math like counts and averages."]]
+  ↳ app/controllers/events_controller.rb:15:in `create'
+  [1m[35m (365.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:15:in `create'
+Redirected to http://127.0.0.1:3000/events
+Completed 200 OK in 700ms (ActiveRecord: 400.9ms | Allocations: 6000)
+
+
+Started GET "/events" for 127.0.0.1 at 2020-11-25 17:23:22 -0400
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime < '2020-11-25 21:23:22.651553')[0m
+  ↳ app/views/events/index.html.erb:5
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (datetime > '2020-11-25 21:23:22.702766')[0m
+  ↳ app/views/events/index.html.erb:28
+  Rendered events/index.html.erb within layouts/application (Duration: 156.3ms | Allocations: 1978)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 5.6ms | Allocations: 842)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 22)
+Completed 200 OK in 333ms (Views: 327.6ms | ActiveRecord: 1.2ms | Allocations: 11283)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2020-11-25 17:43:00 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 352)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 262)
+  Rendered layouts/_messages.html.erb (Duration: 0.7ms | Allocations: 17)
+Completed 200 OK in 203ms (Views: 145.8ms | ActiveRecord: 0.6ms | Allocations: 9196)
+
+
