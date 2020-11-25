@@ -32,12 +32,9 @@ RSpec.describe 'Welcome to Private Events app', type: :system do
     # end
     subject { 
       User.create(first_name: 'joseph')
-      Event.create(description: 'My event')
-      
-     }
+    }
 
-
-    it "signs me in" do
+    it "sign me in" do
       visit '/'
       click_link 'Click here to log in'
       sleep(5)
