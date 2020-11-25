@@ -19,6 +19,24 @@ RSpec.describe UsersController do
     end
   end
 
+  describe 'GET show for unauthenticate user' do
+    before(:example) do
+      get :show
+    end
+
+    it 'renders the show template' do
+      expect(response).to redirect_to('/login')
+    end
+
+    it 'has a 200 status code' do
+      expect(response.status).to eq(302)
+    end
+
+    it 'get request to users/show routes to new action in the sessions controller' do
+      expect(get: 'users').to redirect_to('controller' => 'sessions', 'action' => 'new')
+    end
+  end
+
   describe 'POST new' do
     subject { post :create, params: { user: { first_name: 'Any Name' } } }
 

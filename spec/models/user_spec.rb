@@ -22,7 +22,7 @@ RSpec.describe User do
     end
 
     it 'should have many event_users' do
-      t = User.reflect_on_association(:event_users)
+      t = User.reflect_on_association(:attended_event)
       expect(t.macro).to eq(:has_many)
     end
   end
