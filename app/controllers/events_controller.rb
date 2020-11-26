@@ -2,7 +2,6 @@ class EventsController < ApplicationController
   before_action :require_user, except: %i[index show]
 
   def index
-    @events = Event.all
     @past_events = Event.previous
     @upcoming_events = Event.upcoming
   end
