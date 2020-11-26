@@ -1,5 +1,3 @@
-# rubocop : disable Layout/EndOfLine
-
 require 'rails_helper'
 
 RSpec.describe EventUser, type: :model do
@@ -11,5 +9,3 @@ RSpec.describe EventUser, type: :model do
     expect { EventUser belong_to(:event) }
   end
 end
-
-# rubocop : enable Layout/EndOfLine

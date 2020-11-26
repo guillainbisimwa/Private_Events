@@ -1,5 +1,3 @@
-# rubocop : disable Layout/EndOfLine
-
 require 'rails_helper'
 
 RSpec.describe 'Get to Home Page', type: :feature do
@@ -15,5 +13,3 @@ RSpec.describe 'Get to Home Page', type: :feature do
     end
   end
 end
-
-# rubocop : enable Layout/EndOfLine

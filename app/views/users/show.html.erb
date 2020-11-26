@@ -3,7 +3,7 @@
 <h2 class="my-5">Events <%= @user.first_name.titlecase %> has created</h2>
 
 <div class="card-group row">
-  <% @user.created_events.each do |event| %>
+  <% @created_events.each do |event| %>
   <div class="col-sm-3 my-3">
     <div class="card">
       <div class="card-body">

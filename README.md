@@ -42,11 +42,15 @@ Readme file for the following gems:
 - Linkedin: [Guillain Bisimwa](https://www.linkedin.com/in/guillain-bisimwa-8a8b7a7b/)
 
 ## Getting Started
-Can download this code with any method and over the terminal with the commands:
+In order to run locally this project type the following commands over the terminal in Linux or Mac or the Windows cmd console:
 
 - git clone https://github.com/guillainbisimwa/Private_Events.git
-- In order to test the relationship between User, Events models open the Rails console from the terminal with the command
-- rails console (or it could be "rails c")
+- cd Private_Events
+- yarn install
+- bundle install
+- rails server (to run the server locally)
+
+After running the previous commands, to see the web application in the browser go to the localhost address http://127.0.0.1:3000
 
 ## Run linters
 For the linters, this tests runs once you make a PR, if you have it in the respective folder. In order to have this tests, after cloning this project:

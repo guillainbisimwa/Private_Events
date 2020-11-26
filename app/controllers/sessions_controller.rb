@@ -1,7 +1,3 @@
-# rubocop : disable Layout/EndOfLine
-
-# rubocop : disable Style/GuardClause
-
 class SessionsController < ApplicationController
   def new; end
 
@@ -10,14 +6,14 @@ class SessionsController < ApplicationController
 
     if @user.nil?
       @user = User.find_by(first_name: (params[:session][:first_name]).downcase)
-      redirect_to login_path, alert: 'There was something wrong with your login details' and return if @user.nil?
+      redirect_to login_path, alert: 'There was something wrong with your login details' if @user.nil?
     end
 
-    unless @user.nil?
-      session[:user_id] = @user.id
-      flash[:notice] = 'Logged in successfully'
-      redirect_to users_path(@user)
-    end
+    return if @user.nil?
+
+    session[:user_id] = @user.id
+    flash[:notice] = 'Logged in successfully'
+    redirect_to users_path(@user)
   end
 
   def destroy
@@ -26,7 +22,3 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 end
-
-# rubocop : enable Style/GuardClause
-
-# rubocop : enable Layout/EndOfLine

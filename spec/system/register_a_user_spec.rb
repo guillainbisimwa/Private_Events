@@ -1,5 +1,3 @@
-# rubocop : disable Layout/EndOfLine
-
 require 'rails_helper'
 
 RSpec.describe 'Registration of a new user', type: :system do
@@ -19,5 +17,3 @@ RSpec.describe 'Registration of a new user', type: :system do
     expect(page).to have_content 'Hello Guillain to show page'
   end
 end
-
-# rubocop : enable Layout/EndOfLine

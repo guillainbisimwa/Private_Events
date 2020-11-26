@@ -1,5 +1,3 @@
-# rubocop : disable Layout/EndOfLine
-
 class UsersController < ApplicationController
   before_action :set_user, only: [:show]
 
@@ -22,7 +20,11 @@ class UsersController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @created_events = current_user.created_events
+    @past_events = current_user.attended_events.past
+    @upcoming_events = current_user.attended_events.future
+  end
 
   private
 
@@ -45,5 +47,3 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 end
-
-# rubocop : enable Layout/EndOfLine

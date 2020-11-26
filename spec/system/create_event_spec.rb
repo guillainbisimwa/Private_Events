@@ -1,5 +1,3 @@
-# rubocop : disable Layout/EndOfLine
-
 require 'rails_helper'
 
 RSpec.describe 'A log in user creates an event', type: :system do
@@ -34,5 +32,3 @@ RSpec.describe 'A log in user creates an event', type: :system do
     expect(page).to have_content 'Index Events'
   end
 end
-
-# rubocop : enable Layout/EndOfLine

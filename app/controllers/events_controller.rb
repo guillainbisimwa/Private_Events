@@ -1,10 +1,10 @@
-# rubocop : disable Layout/EndOfLine
-
 class EventsController < ApplicationController
   before_action :require_user, except: %i[index show]
 
   def index
     @events = Event.all
+    @past_events = Event.previous
+    @upcoming_events = Event.upcoming
   end
 
   def new
@@ -38,5 +38,3 @@ class EventsController < ApplicationController
     params.require(:event).permit(:description, :datetime)
   end
 end
-
-# rubocop : enable Layout/EndOfLine

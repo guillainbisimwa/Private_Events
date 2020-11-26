@@ -1,5 +1,3 @@
-# rubocop : disable Layout/EndOfLine
-
 require 'rails_helper'
 
 RSpec.describe UsersController do
@@ -51,5 +49,3 @@ RSpec.describe UsersController do
     end
   end
 end
-
-# rubocop : enable Layout/EndOfLine

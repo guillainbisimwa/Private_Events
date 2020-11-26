@@ -1,5 +1,3 @@
-# rubocop : disable Layout/EndOfLine
-
 class EventUser < ApplicationRecord
   belongs_to :user
   belongs_to :event
@@ -11,6 +9,12 @@ class EventUser < ApplicationRecord
   def search_event(event_id)
     Event.find_by(id: event_id)
   end
-end
 
-# rubocop : enable Layout/EndOfLine
+  def self.past
+    where('datetime < ?', DateTime.now)
+  end
+
+  def self.future
+    where('datetime > ?', DateTime.now)
+  end
+end
