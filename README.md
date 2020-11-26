@@ -72,7 +72,7 @@ rspec spec/controllers
 
 To run only the integration tests:
 
-rspec spec/integration
+rspec spec/system
 
 ## Run Rubocop tests
 The instructions to setup this tests are at this repository: [Rubocop instructions](https://github.com/microverseinc/linters-config/tree/master/ruby)
