@@ -26,7 +26,6 @@ class EventsController < ApplicationController
       redirect_to events_path
     else
       @event = Event.find(params[:id].to_i)
-      @user = User.find(@event.creator)
       @attendees_id = @event.attendees.all
     end
   end

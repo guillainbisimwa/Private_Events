@@ -1,39 +1,23 @@
 require 'rails_helper'
 
-RSpec.describe 'Some process with capybara framework', type: :system do
-
-  describe 'Events' do
-    it 'Go to the events page' do
-      visit events_path
-      expect(page).to have_content('Index Events')
-    end
-
-    it 'Go to the wrong page' do
-      visit events_path
-      expect(page).to_not have_content('Index vents')
-    end
-  end
-
+RSpec.describe 'Login an existing user', type: :system do
   before :each do
     User.create(first_name: 'joseph')
   end
-  # subject { 
-  #   User.create(first_name: 'joseph')
-  # }
 
-  it "sign me in" do
+  it 'Log me in' do
     visit '/'
     click_link 'Click here to log in'
     sleep(5)
-    
+
     expect(page).to have_content 'Welcome to the Login Page of Private Events app'
 
     element = find(:css, "input[id$='session_first_name']")
-    element.fill_in with: "joseph"
+    element.fill_in with: 'joseph'
 
     click_button 'Login user'
     sleep(5)
 
-    expect(page).to have_content 'Hello joseph to show page'
+    expect(page).to have_content 'Hello Joseph to show page'
   end
 end

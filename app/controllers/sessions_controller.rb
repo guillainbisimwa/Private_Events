@@ -1,17 +1,17 @@
+# rubocop : disable Style/GuardClause
+
 class SessionsController < ApplicationController
   def new; end
 
   def create
     @user = User.find_by(id: (params[:session][:number_field]).to_i)
 
-    if @user.nil? 
+    if @user.nil?
       @user = User.find_by(first_name: (params[:session][:first_name]).downcase)
-      if @user.nil?
-        redirect_to login_path, alert: 'There was something wrong with your login details' and return
-      end 
+      redirect_to login_path, alert: 'There was something wrong with your login details' and return if @user.nil?
     end
 
-    if @user
+    unless @user.nil?
       session[:user_id] = @user.id
       flash[:notice] = 'Logged in successfully'
       redirect_to users_path(@user)
@@ -24,3 +24,5 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 end
+
+# rubocop : enable Style/GuardClause

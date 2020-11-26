@@ -37,9 +37,9 @@ class UsersController < ApplicationController
   end
 
   def require_same_user
-    if current_user != @user
-      flash[:alert] = 'You can only see your own events'
-      redirect_to users_path
-    end
+    return unless current_user != @user
+
+    flash[:alert] = 'You can only see your own events'
+    redirect_to users_path
   end
 end

@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe EventsController do
-
   describe 'POST new for unauthenticate user' do
     subject { post :create, params: { format: '1' } }
 
@@ -13,5 +12,4 @@ RSpec.describe EventsController do
       expect(subject).to redirect_to('controller' => 'sessions', 'action' => 'new')
     end
   end
-
 end

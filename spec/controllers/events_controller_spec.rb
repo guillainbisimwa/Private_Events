@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe EventsController do
-
   describe 'GET index' do
     before(:example) do
       get :index
@@ -21,7 +20,7 @@ RSpec.describe EventsController do
   end
 
   describe 'GET for unauthenticate user' do
-    before(:example) do 
+    before(:example) do
       get :new
     end
 
@@ -39,9 +38,8 @@ RSpec.describe EventsController do
   end
 
   describe 'GET show' do
-
     it 'get request to events/show routes to show action in the events controller' do
-      assert_generates "/events/1", { :controller => "events", :action => "show", :id => "1" }
+      assert_generates '/events/1', { controller: 'events', action: 'show', id: '1' }
     end
   end
 

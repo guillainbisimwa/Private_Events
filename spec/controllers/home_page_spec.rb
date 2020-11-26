@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Get to Home Page', type: :feature do
-
   describe 'Home Page' do
     it 'Shows the right content' do
       visit root_path

@@ -1,3 +1,5 @@
+# rubocop : disable Lint/NonLocalExitFromIterator
+
 class EventUsersController < ApplicationController
   before_action :require_user
 
@@ -24,3 +26,5 @@ class EventUsersController < ApplicationController
     end
   end
 end
+
+# rubocop : enable Lint/NonLocalExitFromIterator
