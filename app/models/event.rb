@@ -1,3 +1,5 @@
+# rubocop : disable Layout/EndOfLine
+
 class Event < ApplicationRecord
   belongs_to :user
   alias_attribute :creator, :user
@@ -15,3 +17,5 @@ class Event < ApplicationRecord
   #   where('datetime > ?', DateTime.now)
   # end
 end
+
+# rubocop : enable Layout/EndOfLine

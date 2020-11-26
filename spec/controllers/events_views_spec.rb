@@ -1,3 +1,5 @@
+# rubocop : disable Layout/EndOfLine
+
 require 'rails_helper'
 
 RSpec.describe 'GET to events_path', type: :feature do
@@ -13,3 +15,5 @@ RSpec.describe 'GET to events_path', type: :feature do
     end
   end
 end
+
+# rubocop : enable Layout/EndOfLine

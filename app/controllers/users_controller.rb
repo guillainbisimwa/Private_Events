@@ -1,3 +1,5 @@
+# rubocop : disable Layout/EndOfLine
+
 class UsersController < ApplicationController
   before_action :set_user, only: [:show]
 
@@ -43,3 +45,5 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 end
+
+# rubocop : enable Layout/EndOfLine

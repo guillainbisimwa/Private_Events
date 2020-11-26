@@ -1,3 +1,5 @@
+# rubocop : disable Layout/EndOfLine
+
 require 'rails_helper'
 
 RSpec.describe 'Login an existing user', type: :system do
@@ -21,3 +23,5 @@ RSpec.describe 'Login an existing user', type: :system do
     expect(page).to have_content 'Hello Joseph to show page'
   end
 end
+
+# rubocop : enable Layout/EndOfLine

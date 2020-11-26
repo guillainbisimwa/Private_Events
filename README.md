@@ -2,7 +2,7 @@
 
 # Private Events
 
-The Microverse Associations project for Ruby on Rails module that consists of creating an application named Private Events and that behaves similar to Eventbrite, which allows users to create events and then manage user signups. Users can create events and send invitations and parties (sound familiar?). Events take place at a specific date and at a location. A user can create events. A user can attend many events. An event can be attended by many users. The main goal is to put in practice the main concepts of Associations in rails.
+The Microverse Associations project for Ruby on Rails module that consists of creating an application named Private Events and that behaves similar to Eventbrite, which allows users to create events and then manage user signups. Users can create events, Events take place at a specific date and at a location. A user can create events. A user can attend many events. An event can be attended by many users. The main goal is to put in practice the main concepts of Associations in rails.
 
 ## Built With
 - Ruby programming language

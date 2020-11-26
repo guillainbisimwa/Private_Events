@@ -1,3 +1,5 @@
+# rubocop : disable Layout/EndOfLine
+
 require 'rails_helper'
 
 RSpec.describe EventsController do
@@ -13,3 +15,5 @@ RSpec.describe EventsController do
     end
   end
 end
+
+# rubocop : enable Layout/EndOfLine

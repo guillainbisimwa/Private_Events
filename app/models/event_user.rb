@@ -1,3 +1,5 @@
+# rubocop : disable Layout/EndOfLine
+
 class EventUser < ApplicationRecord
   belongs_to :user
   belongs_to :event
@@ -10,3 +12,5 @@ class EventUser < ApplicationRecord
     Event.find_by(id: event_id)
   end
 end
+
+# rubocop : enable Layout/EndOfLine

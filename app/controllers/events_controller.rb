@@ -1,3 +1,5 @@
+# rubocop : disable Layout/EndOfLine
+
 class EventsController < ApplicationController
   before_action :require_user, except: %i[index show]
 
@@ -36,3 +38,5 @@ class EventsController < ApplicationController
     params.require(:event).permit(:description, :datetime)
   end
 end
+
+# rubocop : enable Layout/EndOfLine
