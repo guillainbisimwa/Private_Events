@@ -27,6 +27,6 @@ class SessionsController < ApplicationController
   end
 end
 
-# rubocop : enable Style/GuardClause
-
 # rubocop : enable Layout/EndOfLine
+
+# rubocop : enable Style/GuardClause

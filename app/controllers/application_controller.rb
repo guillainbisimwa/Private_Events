@@ -2,7 +2,6 @@
 
 # rubocop : disable Layout/EndOfLine
 
-
 class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?
 
@@ -22,6 +21,6 @@ class ApplicationController < ActionController::Base
   end
 end
 
-# rubocop : enable Style/DoubleNegation
-
 # rubocop : enable Layout/EndOfLine
+
+# rubocop : enable Style/DoubleNegation
