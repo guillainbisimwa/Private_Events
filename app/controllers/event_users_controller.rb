@@ -1,6 +1,6 @@
-# rubocop : disable Lint/NonLocalExitFromIterator
-
 # rubocop : disable Layout/EndOfLine
+
+# rubocop : disable Lint/NonLocalExitFromIterator
 
 class EventUsersController < ApplicationController
   before_action :require_user
@@ -29,6 +29,6 @@ class EventUsersController < ApplicationController
   end
 end
 
-# rubocop : enable Layout/EndOfLine
-
 # rubocop : enable Lint/NonLocalExitFromIterator
+
+# rubocop : enable Layout/EndOfLine

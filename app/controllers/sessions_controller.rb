@@ -1,6 +1,6 @@
-# rubocop : disable Style/GuardClause
-
 # rubocop : disable Layout/EndOfLine
+
+# rubocop : disable Style/GuardClause
 
 class SessionsController < ApplicationController
   def new; end
@@ -27,6 +27,6 @@ class SessionsController < ApplicationController
   end
 end
 
-# rubocop : enable Layout/EndOfLine
-
 # rubocop : enable Style/GuardClause
+
+# rubocop : enable Layout/EndOfLine
