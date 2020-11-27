@@ -1,0 +1,19 @@
+<div class="jumbotron mt-5">
+  <h1 class="display-4">Home Page</h1>
+  <p class="lead">Welcome to the Private Events rails app, the Microverse Associations project for Ruby on Rails module that consists of creating an application named 
+  Private Events and that behaves similar to Eventbrite, which allows users to create events and then manage user signups. </p>
+  <hr class="my-4">
+  <p>
+  Users can create events and send invitations and parties (sound familiar?). 
+  Events take place at a specific date and at a location. A user can create events. 
+  A user can attend many events. An event can be attended by many users. 
+  The main goal is to put in practice the main concepts of Associations in rails.</p>
+   <div class="form-inline my-2 my-lg-0">
+      <% if logged_in? %>
+          <%= link_to "Log out", logout_path,  class: "btn btn-lg btn-danger my-2 my-sm-0 ", method: :delete %>  
+      <% else %>
+          <%= link_to "Click here to log in", login_path,  class: "btn btn-lg btn-primary my-2 my-sm-0 ml-4" %>
+          <%= link_to "Click here to sign up", new_users_path,  class: "btn btn-lg btn-primary my-2 my-sm-0 ml-4" %>
+      <% end %>
+      </div>
+</div>
