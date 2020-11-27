@@ -29,17 +29,12 @@ RSpec.describe Event do
     end
 
     it 'should have many event_users' do
-      t = Event.reflect_on_association(:attendees)
-      expect(t.macro).to eq(:has_many)
-    end
-
-    it 'should have many users' do
-      t = Event.reflect_on_association(:users)
+      t = Event.reflect_on_association(:attendee)
       expect(t.macro).to eq(:has_many)
     end
 
     it 'should belong to creator_id' do
-      expect { Event belong_to(:creator_id) }
+      expect { Event belong_to(:user) }
     end
   end
 end

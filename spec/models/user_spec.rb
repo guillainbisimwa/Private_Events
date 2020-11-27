@@ -16,13 +16,8 @@ RSpec.describe User do
       expect(subject.first_name).to_not eq('Juan')
     end
 
-    it 'should have many created_events' do
-      t = User.reflect_on_association(:created_events)
-      expect(t.macro).to eq(:has_many)
-    end
-
     it 'should have many event_users' do
-      t = User.reflect_on_association(:attended_events)
+      t = User.reflect_on_association(:attended_event)
       expect(t.macro).to eq(:has_many)
     end
   end
