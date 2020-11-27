@@ -21,9 +21,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @created_events = current_user.created_events
-    @past_events = current_user.attended_events.past
-    @upcoming_events = current_user.attended_events.future
+    @created_events = current_user.events
+    @past_events = current_user.attendee.past
+    @upcoming_events = current_user.attendee.future
   end
 
   private

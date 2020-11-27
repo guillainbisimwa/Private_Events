@@ -11,7 +11,7 @@ class EventUsersController < ApplicationController
     @event = Event.find_by(id: params[:format].to_i)
     @eventuser = EventUser.new(event_id: @event.id, user_id: current_user.id)
 
-    @event.attendees.each do |user|
+    @event.attended_event.each do |user|
       if current_user.id == user.user_id
         redirect_to event_path(@event), alert: 'You are already assisting this event!' and return
       end

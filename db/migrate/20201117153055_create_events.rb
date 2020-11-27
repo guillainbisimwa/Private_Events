@@ -4,7 +4,7 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :datetime
       t.string :location
-      t.references :user, null: false, foreign_key: true
+      t.references :creator, null: false, foreign_key: true
       t.timestamps
     end
   end

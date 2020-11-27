@@ -28,7 +28,7 @@
 <h2 class="my-5">Upcoming events</h2>
 
 <div class="card-group row">
-  <% @user.attended_events.each do |event| %>
+  <% @user.attendee.each do |event| %>
     <% unless event.search_event(event.event_id).datetime.nil? %>
       <% if event.search_event(event.event_id).datetime > DateTime.now %>
         <div class="col-sm-3">
@@ -58,7 +58,7 @@
 <h2 class="my-5">Previously attended events</h2>
 
 <div class="card-group row">
-  <% @user.attended_events.each do |event| %>
+  <% @user.attendee.each do |event| %>
     <% unless event.search_event(event.event_id).datetime.nil? %>
       <% if event.search_event(event.event_id).datetime <= DateTime.now %>
         <div class="col-sm-3">

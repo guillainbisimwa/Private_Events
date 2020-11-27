@@ -16,7 +16,7 @@
        <%= @event.description %>
     </p>
     <p class="card-text">
-       <small>-by <%= @event.creator.first_name %> </small>
+       <small>-by <%= @event.user.first_name %> </small>
     </p>
      <%= link_to "Go Back", events_path ,  class: "btn btn-info" %>
      <% if logged_in? %>

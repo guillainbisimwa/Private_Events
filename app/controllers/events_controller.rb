@@ -11,14 +11,14 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = current_user.created_events.build(event_params)
+    @event = current_user.events.build(event_params)
 
     if @event.save
       flash[:notice] = "#{@event.title} event has been created!"
       redirect_to events_path
     else
-      flash[:alert] = @event.errors.full_messages
-      redirect_to 'new'
+      flash.now[:alert] = @event.errors.full_messages
+      redirect_to new_event_path
     end
   end
 
@@ -27,7 +27,7 @@ class EventsController < ApplicationController
       redirect_to events_path
     else
       @event = Event.find(params[:id].to_i)
-      @attendees_id = @event.attendees.all
+      @attendees_id = @event.attended_event.all
     end
   end
 
