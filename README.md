@@ -31,16 +31,6 @@ Readme file for the following gems:
 - https://github.com/rspec/rspec-rails/
 - https://github.com/teamcapybara/capybara
 
-
-## Authors
-### Author
-- 👤GitHub: [Jose Abel Ramirez](https://github.com/jose-Abel)
-- Linkedin: [Jose Abel Ramirez Frontany](https://www.linkedin.com/in/jose-abel-ramirez-frontany-7674a842/)
-
-### Author
-- 👤GitHub: [Guillain Bisimwa](https://github.com/guillainbisimwa)
-- Linkedin: [Guillain Bisimwa](https://www.linkedin.com/in/guillain-bisimwa-8a8b7a7b/)
-
 ## Getting Started
 In order to run locally this project type the following commands over the terminal in Linux or Mac or the Windows cmd console:
 
@@ -86,6 +76,15 @@ To download rubocop and run the tests on your local environment, this are the co
 - cd Private_Events
 - copy this file [.rubocop.yml](https://github.com/microverseinc/linters-config/blob/master/ruby/.rubocop.yml) in the root directory of the project
 - type in the terminal 'rubocop'
+
+## Authors
+### Author
+- 👤GitHub: [Jose Abel Ramirez](https://github.com/jose-Abel)
+- Linkedin: [Jose Abel Ramirez Frontany](https://www.linkedin.com/in/jose-abel-ramirez-frontany-7674a842/)
+
+### Author
+- 👤GitHub: [Guillain Bisimwa](https://github.com/guillainbisimwa)
+- Linkedin: [Guillain Bisimwa](https://www.linkedin.com/in/guillain-bisimwa-8a8b7a7b/)
 
 
 ### Acknowledgments
